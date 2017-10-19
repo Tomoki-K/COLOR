@@ -3,7 +3,8 @@
 ## Getting started
 1. clone repository
 ```
-https://github.com/Tomoki-K/e-learning.git
+cd (your directory)
+git clone https://github.com/Tomoki-K/e-learning.git
 ```
 
 1. install packages
