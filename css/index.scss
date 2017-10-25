@@ -1,4 +1,35 @@
+body {
+    font-family: 'Droid Sans Mono', monospace;
+}
 .mainWrapper {
     margin-top: 30%;
     text-align: center;
+}
+
+span {
+    &.red {
+        color: red;
+    }
+    &.green {
+        color: green;
+    }
+    &.blue {
+        color: blue;
+    }
+}
+
+.choice-box{
+    .color-choice {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        border: none;
+        transition: width 0.5s, height 0.5s;
+        &:hover {
+            border: solid 5px black;
+            transition: width 0.5s, height 0.5s;
+        }
+    }
 }
