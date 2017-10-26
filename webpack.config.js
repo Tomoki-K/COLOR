@@ -2,10 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './js/quiz.jsx',
+    entry: {
+        'app': './js/app.jsx',
+        'quiz': './js/quiz.jsx',
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'app.bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         loaders: [

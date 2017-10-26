@@ -49,9 +49,11 @@ class Quiz extends React.Component {
                     })}
                 </div>
                 <p>combo: {this.state.combo}</p>
+                <br/>
+                <a href='./index.html'>home</a>
             </div>
         );
     }
 }
 ReactDom.render(
-    <Quiz/>, document.getElementById("app"));
+    <Quiz/>, document.getElementById("quiz"));

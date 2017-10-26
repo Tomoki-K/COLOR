@@ -25,6 +25,8 @@ class App extends React.Component {
                         <span className='blue'>{this.state.color.b})</span>
                 </p>
                 <button onClick={() => this.newColor()}>new color!</button>
+                <br/>
+                <a href = './quiz.html'>quiz page</a>
             </div>
         );
     }
