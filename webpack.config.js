@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         'app': './js/app.jsx',
         'quiz': './js/quiz.jsx',
+        'text': './js/text.jsx',
     },
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -21,6 +22,9 @@ module.exports = {
             },{
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
+            },{
+                test: /\.json$/,
+                loader: 'json-loader'
             },
         ]
     },
