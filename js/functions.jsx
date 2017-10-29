@@ -1,5 +1,6 @@
 // common functions
 
+// generates a random color object
 export function generateColor() {
     let color = {
         hex: null,
@@ -10,12 +11,12 @@ export function generateColor() {
     color.hex = toPaddedHex(color.r) + toPaddedHex(color.g) + toPaddedHex(color.b);
     return color;
 }
-
 function toPaddedHex(digit){
     let hex = digit.toString(16).toUpperCase();
     return hex.length == 1 ? '0' + hex : hex;
 }
 
+// randomize array order
 export function shuffle(arr) {
     let n = arr.length, t, i;
     while (n) {
@@ -26,4 +27,13 @@ export function shuffle(arr) {
     }
 
     return arr;
+}
+
+// conditional rendering
+export function If(props) {
+    if (props.condition) {
+        return props.children;
+    } else {
+        return false;
+    }
 }
