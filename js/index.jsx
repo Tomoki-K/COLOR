@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { generateColor } from './functions.jsx'
+import { Header } from "./modules.jsx";
 require('../css/index.scss');
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
     render() {
         return (
             <div className='mainWrapper'>
+                <Header />
                 <h1 style={{color: `#${this.state.color.hex}`}}>#{this.state.color.hex}</h1>
                 <p>rgb(
                         <span className='red'>{this.state.color.r}</span>,

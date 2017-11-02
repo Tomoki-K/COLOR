@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { generateColor, shuffle } from './functions.jsx'
+import { Header } from "./modules.jsx";
 require('../css/index.scss');
 
 class Quiz extends React.Component {
@@ -35,6 +36,7 @@ class Quiz extends React.Component {
     render() {
         return (
             <div className='mainWrapper'>
+                <Header />
                 <h1>#{this.state.answer.hex}</h1>
                 <p>{this.state.status}</p>
                 <div className='choice-box'>

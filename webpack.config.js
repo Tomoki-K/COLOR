@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        'app': './js/app.jsx',
+        'index': './js/index.jsx',
         'quiz': './js/quiz.jsx',
         'text': './js/text.jsx',
     },

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import ReactMarkdown from "react-markdown";
 import { If } from "./functions.jsx";
+import { Header } from "./modules.jsx";
 
 import text from '../json/text.json';
 
@@ -11,7 +12,7 @@ class Text extends React.Component {
         super();
         this.state = {
             pg: 0,
-            currentPg: text['text_0'].text,
+            currentPg: text['text_0'],
             nextPg: text['text_1']
         }
         this.loadNextPage = this.loadNextPage.bind(this);
@@ -22,7 +23,7 @@ class Text extends React.Component {
         const nextPg = this.state.pg + 1;
         this.setState({
             pg: nextPg,
-            currentPg: text['text_' + nextPg].text,
+            currentPg: text['text_' + nextPg],
             nextPg: text['text_' + (nextPg + 1)] || null
         });
     }
@@ -30,7 +31,7 @@ class Text extends React.Component {
     loadFirstPage(){
         this.setState({
             pg: 0,
-            currentPg: text['text_0'].text,
+            currentPg: text['text_0'],
             nextPg: text['text_1']
         });
     }
@@ -38,7 +39,8 @@ class Text extends React.Component {
     render() {
         return (
             <div className='mainWrapper'>
-                <ReactMarkdown source={this.state.currentPg} />
+                <Header />
+                <ReactMarkdown source={this.state.currentPg.text} />
                 <If condition={this.state.nextPg != null}>
                     <button onClick={this.loadNextPage}>next page</button>
                 </If>
