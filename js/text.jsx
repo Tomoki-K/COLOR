@@ -38,15 +38,17 @@ class Text extends React.Component {
 
     render() {
         return (
-            <div className='mainWrapper'>
+            <div>
                 <Header />
-                <ReactMarkdown source={this.state.currentPg.text} />
-                <If condition={this.state.nextPg != null}>
-                    <button onClick={this.loadNextPage}>next page</button>
-                </If>
-                <If condition={this.state.nextPg == null}>
-                    <button onClick={this.loadFirstPage}>restart</button>
-                </If>
+                <div className='mainWrapper'>
+                    <ReactMarkdown source={this.state.currentPg.text} />
+                    <If condition={this.state.nextPg != null}>
+                        <button onClick={this.loadNextPage}>next page</button>
+                    </If>
+                    <If condition={this.state.nextPg == null}>
+                        <button onClick={this.loadFirstPage}>restart</button>
+                    </If>
+                </div>
             </div>
         );
     }

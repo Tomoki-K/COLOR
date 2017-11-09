@@ -18,19 +18,21 @@ class Index extends React.Component {
 
     render() {
         return (
-            <div className='mainWrapper'>
+            <div>
                 <Header />
-                <h1 style={{color: `#${this.state.color.hex}`}}>COLOR</h1>
-                <p>
-                    #{this.state.color.hex} rgb(
-                        <span className='red'>{this.state.color.r}</span>,
-                        <span className='green'>{this.state.color.g}</span>,
-                        <span className='blue'>{this.state.color.b})</span>
-                </p>
-                <button onClick={() => this.newColor()}>new color!</button>
-            </div>
-        );
-    }
-}
-ReactDom.render(
-    <Index/>, document.getElementById("app"));
+                <div className='mainWrapper'>
+                    <h1 style={{color: `#${this.state.color.hex}`}}>COLOR</h1>
+                    <p>
+                        #{this.state.color.hex} rgb(
+                            <span className='red'>{this.state.color.r}</span>,
+                                <span className='green'>{this.state.color.g}</span>,
+                                    <span className='blue'>{this.state.color.b})</span>
+                                </p>
+                                <button onClick={() => this.newColor()}>new color!</button>
+                            </div>
+                        </div>
+                    );
+                }
+            }
+            ReactDom.render(
+                <Index/>, document.getElementById("app"));

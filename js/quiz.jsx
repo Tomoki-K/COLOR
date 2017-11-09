@@ -50,22 +50,25 @@ class Quiz extends React.Component {
 
     render() {
         return (
-            <div className='mainWrapper'>
+            <div>
                 <Header />
-                <h1>#{this.state.answer.hex}</h1>
-                <p>{this.state.status}</p>
-                <div className='choice-box'>
-                    {this.state.choices.map((color, idx) => {
-                        return (
-                            <div
-                                className='color-choice'
-                                style={{backgroundColor: `#${color.hex}`}}
-                                onClick={() => this.checkAnswer(color.hex)}
-                            />
-                        );
-                    })}
+                <div className='mainWrapper'>
+                    <h1>#{this.state.answer.hex}</h1>
+                    <p>{this.state.status}</p>
+                    <div className='choice-box'>
+                        {this.state.choices.map((color, idx) => {
+                            return (
+                                <div
+                                    key={`color-${idx}`}
+                                    className='color-choice'
+                                    style={{backgroundColor: `#${color.hex}`}}
+                                    onClick={() => this.checkAnswer(color.hex)}
+                                />
+                            );
+                        })}
+                    </div>
+                    <p>combo: {this.state.combo}</p>
                 </div>
-                <p>combo: {this.state.combo}</p>
             </div>
         );
     }

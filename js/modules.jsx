@@ -11,9 +11,12 @@ export class Header extends React.Component {
     render(){
         return(
             <div className='headerWrapper'>
-                <a href='./index.html'><button className="headerBtn">home</button></a>
-                <a href='./text.html'><button className="headerBtn">text</button></a>
-                <a href='./quiz.html'><button className="headerBtn">quiz</button></a>
+                <ul>
+                    <li key='index'><a href='./index.html'>home</a></li>
+                    <li key='text'><a href='./text.html'>text</a></li>
+                    <li key='quiz'><a href='./quiz.html'>quiz</a></li>
+                    <li key='about' className='right'><a href='./about.html'>about</a></li>
+                </ul>
             </div>
         );
     }
