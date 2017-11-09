@@ -1,3 +1,12 @@
+// ===== modules ===== //
+.headerWrapper {
+    .headerBtn {
+
+    }
+}
+
+
+// ===== common ===== //
 body {
     font-family: 'Droid Sans Mono', monospace;
 }
@@ -29,10 +38,6 @@ span {
         height: 100px;
         margin: 5px;
         border: none;
-        transition: width 0.5s, height 0.5s;
-        &:hover {
-            border: solid 5px black;
-            transition: width 0.5s, height 0.5s;
-        }
+        border-radius: 100px;
     }
 }

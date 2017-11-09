@@ -9,27 +9,42 @@ class Quiz extends React.Component {
         let answer = generateColor();
         super();
         this.state = {
+            level: 1,
             combo: 0,
             status: 'which color?',
             answer: answer,
-            choices: shuffle([generateColor(), generateColor(), answer])
+            choices: this.generateChoices(answer, 1)
         };
     }
 
-    newColor(){
+    newColorSet(){
         let answer = generateColor();
         this.setState({
             answer: answer,
-            choices: shuffle([generateColor(), generateColor(), answer])
+            choices: this.generateChoices(answer, this.state.level)
         });
+    }
+
+    generateChoices(answer, level){
+        let choices = [answer];
+        for (var i = 0; i < level; i++) {
+            choices.push(generateColor());
+        }
+        return shuffle(choices);
     }
 
     checkAnswer(selection) {
         if (selection == this.state.answer.hex) {
-            this.newColor();
-            this.setState({combo: this.state.combo + 1, status: 'correct!'});
+            this.newColorSet();
+            this.setState({
+                combo: this.state.combo + 1,
+                status: 'correct!'
+            });
         } else {
-            this.setState({combo: 0, status: 'wrong!'});
+            this.setState({
+                combo: 0,
+                status: `wrong! That color was #${selection}`
+            });
         }
     }
 
@@ -42,7 +57,7 @@ class Quiz extends React.Component {
                 <div className='choice-box'>
                     {this.state.choices.map((color, idx) => {
                         return (
-                            <button
+                            <div
                                 className='color-choice'
                                 style={{backgroundColor: `#${color.hex}`}}
                                 onClick={() => this.checkAnswer(color.hex)}
@@ -51,8 +66,6 @@ class Quiz extends React.Component {
                     })}
                 </div>
                 <p>combo: {this.state.combo}</p>
-                <br/>
-                <a href='./index.html'>home</a>
             </div>
         );
     }

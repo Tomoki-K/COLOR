@@ -31,7 +31,9 @@
         "webpack": "^3.8.1"
     },
     "dependencies": {
+        "jquery": "^3.2.1",
         "json-loader": "^0.5.7",
+        "materialize-css": "^0.100.2",
         "raw-loader": "^0.5.1"
     }
 }
