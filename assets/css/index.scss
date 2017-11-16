@@ -90,6 +90,10 @@ span {
     h2::before{
         content: "● ";
     }
+    img{
+        display: block;
+        margin: 0 auto;
+    }
 }
 .nextBtn{
     cursor: pointer;
