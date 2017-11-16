@@ -8,15 +8,16 @@
         background-color: #333;
     }
     li {
+        cursor: pointer;
         float: left;
-        p{
+        p {
             display: block;
             color: white;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
-        &.right{
+        &.right {
             float: right;
         }
     }
@@ -26,19 +27,20 @@
 // ===== common ===== //
 body {
     font-family: 'Droid Sans Mono', monospace;
+    letter-spacing: 5px;
+    margin: 0;
 }
 .mainWrapper {
     position: fixed;
     width: 60%;
     left: 50%;
     transform: translateX(-50%);
-    &.center{
+    &.center {
         top: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
     }
 }
-
 span {
     &.red {
         color: red;
@@ -50,8 +52,7 @@ span {
         color: blue;
     }
 }
-
-.choice-box{
+.choice-box {
     .color-choice {
         display: inline-block;
         vertical-align: middle;
@@ -62,17 +63,62 @@ span {
         border-radius: 100px;
     }
 }
+.mainBtn {
+    &.large {
+        border-width: 5px;
+        padding: 20px;
+    }
+    &.medium {
+        border-width: 3px;
+        padding: 10px;
+    }
+    border-color: #333;
+    background-color: #333;
+    color: white;
+    border-radius: 0;
+    border-width: 5px;
+    padding: 20px;
+    font-family: inherit;
+    font-size: 1.2em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    &:hover {
+        background-color: white;
+        color: #333;
+    }
+}
+// ===== title ===== //
+.title {
+    font-size: 7em;
+    margin: 0;
+    letter-spacing: 10px;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+    &::selection {
+        background-color: white;
+    }
+}
+.titleBtn {
+    margin-top: 30px;
+}
 
 // ===== index ===== //
 .indexList {
     text-align: left;
     margin-left: 200px;
-    .unlocked {
-        cursor: pointer;
+    p.unlocked {
+        .labelText {
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            &:hover {
+                letter-spacing: 10px;
+            }
+        }
     }
     .locked {
         color: lightgray;
-        &::after{
+        &::after {
             margin-left: 5px;
             font-family: FontAwesome;
             content: '\f023'
@@ -81,36 +127,44 @@ span {
 }
 
 // ===== text ===== //
-.mdZone{
-    h1{
+.mdZone {
+    letter-spacing: normal;
+    h1 {
         border-radius: 5px;
         background-color: lightgray;
         padding: 10px 15px;
     }
-    h2::before{
-        content: "● ";
+    h2::before {
+        margin-right: 5px;
+        font-family: FontAwesome;
+        content: "\f1db";
     }
-    img{
+    img {
         display: block;
         margin: 0 auto;
     }
 }
-.nextBtn{
+.nextBtn {
     cursor: pointer;
     float: right;
     margin-top: 30px;
+    &::after {
+        margin-left: 10px;
+        font-family: FontAwesome;
+        content: '\f105'
+    }
 }
 
 // ===== about ===== //
-.LOMtable{
+.LOMtable {
     width: 100%;
     border: 1px solid black;
     border-collapse: collapse;
-    th{
+    th {
         width: 20%;
         border: 1px solid black;
     }
-    td{
+    td {
         text-align: left;
         padding: 5px;
         border: 1px solid black;

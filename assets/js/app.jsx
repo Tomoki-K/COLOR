@@ -6,6 +6,7 @@ import About from "./about.jsx";
 import Text from "./text.jsx";
 import Quiz from "./quiz.jsx";
 import PostTest from "./post-test.jsx";
+import PreTest from "./pre-test.jsx";
 require('../css/index.scss');
 
 class App extends React.Component {
@@ -50,13 +51,15 @@ class App extends React.Component {
                 {/* ===== TITLE PAGE ===== */}
                 <If condition={this.state.page == 'title'}>
                     <div className='mainWrapper center'>
-                        <h1 style={{color: `#${this.state.color.hex}`}}>COLOR</h1>
+                        <h1 className='title'
+                            onClick={() => this.newColor()}
+                            style={{color: `#${this.state.color.hex}`}}>COLOR</h1>
                         <p>#{this.state.color.hex} rgb(
                                 <span className='red'>{this.state.color.r}</span>,
                                 <span className='green'>{this.state.color.g}</span>,
                                 <span className='blue'>{this.state.color.b})</span>
                         </p>
-                        <button onClick={() => this.jumpto('index')}>index</button>
+                        <button className='titleBtn mainBtn large' onClick={() => this.jumpto('pre-test')}>start pre-test</button>
                     </div>
                 </If>
                 {/* ===== INDEX PAGE ===== */}
@@ -70,7 +73,7 @@ class App extends React.Component {
                                         className={page.unlocked ? 'unlocked' : 'locked'}
                                         key={`page-${page.value}`}
                                         onClick={()=> (page.unlocked) ? this.jumpto(page.type, page.value) : {}}>
-                                        {idx + 1}.  {page.label}
+                                        {idx + 1}.  <span className='labelText'>{page.label}</span>
                                     </p>
                                 );
                             })}
@@ -79,7 +82,7 @@ class App extends React.Component {
                 </If>
                 {/* ===== PRE-TEST PAGE ===== */}
                 <If condition={this.state.page == 'pre-test'}>
-
+                    <PreTest />
                 </If>
                 {/* ===== TEXT PAGE ===== */}
                 <If condition={this.state.page == 'text'}>

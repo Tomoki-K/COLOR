@@ -14,7 +14,11 @@ export default class Text extends React.Component {
         return (
             <div className='mainWrapper'>
                 <ReactMarkdown source={eval(`text_${this.props.textPage}`)} className='mdZone'/>
-                <p className='nextBtn' onClick={() => {this.props.handleJump('quiz', this.props.textPage)}}>練習問題へ >></p>
+                <button
+                    className='nextBtn mainBtn medium'
+                    onClick={() => {this.props.handleJump('quiz', this.props.textPage)}}>
+                    練習問題へ
+                </button>
             </div>
         );
     }
