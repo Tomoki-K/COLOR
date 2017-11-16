@@ -3,15 +3,17 @@ import ReactMarkdown from "react-markdown";
 import { If } from "./functions.jsx";
 import { Header } from "./modules.jsx";
 
-import text from '../json/text.json';
+// import markdown here
+const text_color = require('raw-loader!../md/color.md');
+const text_rgb = require('raw-loader!../md/rgb.md');
+const text_hex = require('raw-loader!../md/hex.md');
 
 export default class Text extends React.Component {
 
     render() {
-        const page = text[this.props.textPage];
         return (
             <div className='mainWrapper'>
-                <ReactMarkdown source={page.text} className='mdZone'/>
+                <ReactMarkdown source={eval(`text_${this.props.textPage}`)} className='mdZone'/>
                 <p className='nextBtn' onClick={() => {this.props.handleJump('quiz', this.props.textPage)}}>練習問題へ >></p>
             </div>
         );
