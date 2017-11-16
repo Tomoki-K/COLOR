@@ -3,10 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        'index': './js/index.jsx',
-        'quiz': './js/quiz.jsx',
-        'text': './js/text.jsx',
-        'about': './js/about.jsx',
+        'app': './js/app.jsx',
     },
     output: {
         path: path.resolve(__dirname, 'build'),
