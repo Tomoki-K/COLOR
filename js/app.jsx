@@ -24,6 +24,7 @@ class App extends React.Component {
             color: generateColor()
         };
         this.jumpto = this.jumpto.bind(this);
+        this.unlockNextPage = this.unlockNextPage.bind(this);
     }
 
     newColor() {
@@ -35,6 +36,11 @@ class App extends React.Component {
             page: nextPage,
             textPage: text
         });
+    }
+
+    unlockNextPage(current){
+        const idx = this.state.pages.findIndex(p => p.value == current);
+        this.state.pages[idx + 1].unlocked = true;
     }
 
     render() {
@@ -57,13 +63,18 @@ class App extends React.Component {
                 <If condition={this.state.page == 'index'}>
                     <div className='mainWrapper center'>
                         <h1>index</h1>
-                        <ul>
+                        <div className='indexList'>
                             {this.state.pages.map((page, idx)=>{
                                 return(
-                                    <li key={`page-${page.value}`} onClick={()=>this.jumpto(page.type, page.value)}>{page.label}</li>
+                                    <p
+                                        className={page.unlocked ? 'unlocked' : 'locked'}
+                                        key={`page-${page.value}`}
+                                        onClick={()=> (page.unlocked) ? this.jumpto(page.type, page.value) : {}}>
+                                        {idx + 1}.  {page.label}
+                                    </p>
                                 );
                             })}
-                        </ul>
+                        </div>
                     </div>
                 </If>
                 {/* ===== PRE-TEST PAGE ===== */}
@@ -76,7 +87,10 @@ class App extends React.Component {
                 </If>
                 {/* ===== QUIZ PAGE ===== */}
                 <If condition={this.state.page == 'quiz'}>
-                    <Quiz textPage={this.state.textPage} handleJump={this.jumpto}/>
+                    <Quiz
+                        textPage={this.state.textPage}
+                        handleJump={this.jumpto}
+                        handleUnlock={this.unlockNextPage}/>
                 </If>
                 {/* ===== POST-TEST PAGE ===== */}
                 <If condition={this.state.page == 'post-test'}>

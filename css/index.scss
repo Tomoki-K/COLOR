@@ -63,6 +63,23 @@ span {
     }
 }
 
+// ===== index ===== //
+.indexList {
+    text-align: left;
+    margin-left: 200px;
+    .unlocked {
+        cursor: pointer;
+    }
+    .locked {
+        color: lightgray;
+        &::after{
+            margin-left: 5px;
+            font-family: FontAwesome;
+            content: '\f023'
+        }
+    }
+}
+
 // ===== text ===== //
 .mdZone{
     h1{
