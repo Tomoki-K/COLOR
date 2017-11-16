@@ -52,7 +52,7 @@ class Quiz extends React.Component {
         return (
             <div>
                 <Header />
-                <div className='mainWrapper'>
+                <div className='mainWrapper center'>
                     <h1>#{this.state.answer.hex}</h1>
                     <p>{this.state.status}</p>
                     <div className='choice-box'>
@@ -73,5 +73,4 @@ class Quiz extends React.Component {
         );
     }
 }
-ReactDom.render(
-    <Quiz/>, document.getElementById("quiz"));
+ReactDom.render(<Quiz/>, document.getElementById("quiz"));

@@ -29,10 +29,14 @@ body {
 }
 .mainWrapper {
     position: fixed;
-    top: 50%;
+    width: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    transform: translateX(-50%);
+    &.center{
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
 span {
@@ -56,5 +60,38 @@ span {
         margin: 5px;
         border: none;
         border-radius: 100px;
+    }
+}
+
+// ===== text ===== //
+.mdZone{
+    h1{
+        border-radius: 5px;
+        background-color: lightgray;
+        padding: 10px 15px;
+    }
+    h2::before{
+        content: "● ";
+    }
+}
+.nextBtn{
+    cursor: pointer;
+    float: right;
+    margin-top: 30px;
+}
+
+// ===== about ===== //
+.LOMtable{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    th{
+        width: 20%;
+        border: 1px solid black;
+    }
+    td{
+        text-align: left;
+        padding: 5px;
+        border: 1px solid black;
     }
 }

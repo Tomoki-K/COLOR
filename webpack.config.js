@@ -6,6 +6,7 @@ module.exports = {
         'index': './js/index.jsx',
         'quiz': './js/quiz.jsx',
         'text': './js/text.jsx',
+        'about': './js/about.jsx',
     },
     output: {
         path: path.resolve(__dirname, 'build'),

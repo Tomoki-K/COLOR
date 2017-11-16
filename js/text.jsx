@@ -41,17 +41,16 @@ class Text extends React.Component {
             <div>
                 <Header />
                 <div className='mainWrapper'>
-                    <ReactMarkdown source={this.state.currentPg.text} />
+                    <ReactMarkdown source={this.state.currentPg.text} className='mdZone'/>
                     <If condition={this.state.nextPg != null}>
-                        <button onClick={this.loadNextPage}>next page</button>
+                        <p className='nextBtn' onClick={this.loadNextPage}>next page >></p>
                     </If>
                     <If condition={this.state.nextPg == null}>
-                        <button onClick={this.loadFirstPage}>restart</button>
+                        <p onClick={this.loadFirstPage}>restart</p>
                     </If>
                 </div>
             </div>
         );
     }
 }
-ReactDom.render(
-    <Text/>, document.getElementById("text"));
+ReactDom.render(<Text/>, document.getElementById("text"));
