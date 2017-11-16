@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        'app': './js/app.jsx',
+        'app': './assets/js/app.jsx',
     },
     output: {
         path: path.resolve(__dirname, 'build'),
