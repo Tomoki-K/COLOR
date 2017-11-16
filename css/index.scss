@@ -9,7 +9,7 @@
     }
     li {
         float: left;
-        a{
+        p{
             display: block;
             color: white;
             text-align: center;
@@ -60,6 +60,23 @@ span {
         margin: 5px;
         border: none;
         border-radius: 100px;
+    }
+}
+
+// ===== index ===== //
+.indexList {
+    text-align: left;
+    margin-left: 200px;
+    .unlocked {
+        cursor: pointer;
+    }
+    .locked {
+        color: lightgray;
+        &::after{
+            margin-left: 5px;
+            font-family: FontAwesome;
+            content: '\f023'
+        }
     }
 }
 
