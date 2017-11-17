@@ -7,21 +7,52 @@ export default class About extends React.Component {
                 <h1>LOM情報</h1>
                 <table className='LOMtable'>
                     <tr>
-                        <th>行-1</th>
+                        <th>教材名称</th>
+                        <td>COLOR(コロル)</td>
+                    </tr>
+                    <tr>
+                        <th>概要</th>
+                        <td>カラーコードの理解を深めることで，コンピューター上における色彩表現を学習する．</td>
+                    </tr>
+                    <tr>
+                        <th>キーワード</th>
+                        <td>美術(色)，カラーコード，RGB，16進数</td>
+                    </tr>
+                    <tr>
+                        <th>目標</th>
                         <td>
-                            multi<br/>
-                            line<br/>
-                            foooo<br/>
+                            色を見ておおよそのカラーコードを判断できるようになること<br/>
+                            カラーコードを見て色を想像できるようになること
                         </td>
                     </tr>
                     <tr>
-                        <th>行-2</th>
-                        <td>A-2</td>
+                        <th>対象者</th>
+                        <td>プログラミング初心者</td>
                     </tr>
                     <tr>
-                        <th>行-3</th>
-                        <td>A-3</td>
+                        <th>対象者の条件</th>
+                        <td>正常にいろが判別できる人</td>
                     </tr>
+                    <tr>
+                        <th>学習時間</th>
+                        <td>15分</td>
+                    </tr>
+                    <tr>
+                        <th>使用料</th>
+                        <td>5000兆円</td>
+                    </tr>
+                    <tr>
+                        <th>企画・制作</th>
+                        <td>
+                            あざらし。<br/>
+                        同志社大学理工学部e-ラーニング2017 グループD
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>募集方法</th>
+                        <td>同志社大学理工学部情報系学科，文化情報学部の1回生を対象とし，10名程度募集する．</td>
+                    </tr>
+
                 </table>
             </div>
         );
