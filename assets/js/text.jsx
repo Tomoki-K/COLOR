@@ -13,7 +13,10 @@ export default class Text extends React.Component {
     render() {
         return (
             <div className='mainWrapper'>
-                <ReactMarkdown source={eval(`text_${this.props.textPage}`)} className='mdZone'/>
+                // BUG: Hardbreak not working
+                <ReactMarkdown
+                    Hardbreak={true}
+                    source={eval(`text_${this.props.textPage}`)} className='mdZone'/>
                 <button
                     className='nextBtn mainBtn medium'
                     onClick={() => {this.props.handleJump('quiz', this.props.textPage)}}>
