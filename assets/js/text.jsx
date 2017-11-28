@@ -19,7 +19,7 @@ export default class Text extends React.Component {
                 <button
                     className='nextBtn mainBtn medium'
                     onClick={() => {this.props.handleJump('quiz', this.props.textPage)}}>
-                    練習問題へ
+                    practice
                 </button>
             </div>
         );

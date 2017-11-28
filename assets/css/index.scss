@@ -79,6 +79,11 @@ span {
         border-width: 3px;
         padding: 10px;
     }
+    &.center {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     border-color: #333;
     background-color: #333;
     color: white;
@@ -94,6 +99,28 @@ span {
         color: #333;
     }
 }
+
+.nextBtn {
+    cursor: pointer;
+    float: right;
+    &::after {
+        margin-left: 10px;
+        font-family: FontAwesome;
+        content: '\f105'
+    }
+}
+
+.prevBtn {
+    cursor: pointer;
+    float: left;
+    margin: 30px 0 100px 0;
+    &::before {
+        margin-right: 10px;
+        font-family: FontAwesome;
+        content: '\f104'
+    }
+}
+
 // ===== title ===== //
 .title {
     font-size: 7em;
@@ -167,14 +194,53 @@ span {
         }
     }
 }
-.nextBtn {
-    cursor: pointer;
-    float: right;
-    margin: 30px 0 100px 0;
-    &::after {
-        margin-left: 10px;
-        font-family: FontAwesome;
-        content: '\f105'
+
+// ===== about ===== //
+.questionsWrapper {
+    li {
+        margin-top: 10px;
+        list-style: none;
+    }
+    input {
+        margin-right: 10px;
+    }
+    &.marked{
+        .question {
+            &.correct {
+                &::after {
+                    color: green;
+                    margin-left: 10px;
+                    font-family: FontAwesome;
+                    content: '\f10c'
+                }
+            }
+            &.wrong {
+                &::after {
+                    color: red;
+                    margin-left: 10px;
+                    font-family: FontAwesome;
+                    content: '\f00d'
+                }
+            }
+        }
+        .radioItem {
+            &.correct {
+                font-weight: bold;
+                color: green;
+            }
+            &.wrong {
+                text-decoration: line-through;
+            }
+            &.correctAns {
+                font-weight: bold;
+                color: red;
+            }
+        }
+        .scoreText {
+            padding: 20px;
+            text-align: center;
+            background-color: lightgray;
+        }
     }
 }
 
