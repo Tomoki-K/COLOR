@@ -2,28 +2,14 @@ import React from "react";
 import RadioList from "./RadioList.jsx";
 import { If } from "./functions.jsx";
 
-// TODO: move to JSON file
-const quiz = [
-    {
-        question: 'question1',
-        choices: ['c1', 'c2', 'c3', 'c4'],
-        answer: 1
-    },{
-        question: 'question2',
-        choices: ['c1', 'c2', 'c3', 'c4'],
-        answer: 2
-    },{
-        question: 'question3',
-        choices: ['c1', 'c2', 'c3', 'c4'],
-        answer: 1
-    }
-];
+// import questions
+const quiz = require('../json/quiz.json');
 
 export default class Quiz extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            questions: quiz,
+            questions: quiz[`${this.props.textPage}`].questions,
             UserChoices: new Array(quiz.length).fill(null),
             marked: false,
             correctCnt: 0
@@ -61,7 +47,7 @@ export default class Quiz extends React.Component {
     render(){
         return(
             <div className={`mainWrapper questionsWrapper ${this.state.marked ? 'marked' : ''}`}>
-                <h1>{this.props.textPage}</h1>
+                <h1>{quiz[`${this.props.textPage}`].title}</h1>
                 {this.state.questions.map((q, idx) => {
                     const status = this.isCorrect(idx) ? 'correct' : 'wrong';
                     return(

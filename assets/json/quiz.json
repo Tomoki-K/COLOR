@@ -1,0 +1,53 @@
+{
+    "sample": {
+        "title": "適当なタイトル",
+        "questions": [
+            {
+                "question": "問題文1",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "問題文2",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "問題文2",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            }
+        ]
+    },
+
+    "color": {
+        "title": "",
+        "questions": [
+            {
+                "question": "",
+                "choices": [],
+                "answer": 0
+            }
+        ]
+    },
+
+    "hex": {
+        "title": "",
+        "questions": [
+            {
+                "question": "",
+                "choices": [],
+                "answer": 0
+            }
+        ]
+    },
+
+    "rgb": {
+        "title": "",
+        "questions": [
+            {
+                "question": "",
+                "choices": [],
+                "answer": 0
+            }
+        ]
+    }
+}
