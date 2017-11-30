@@ -18,6 +18,17 @@
         ]
     },
 
+    "pre-test": {
+        "title": "",
+        "questions": [
+            {
+                "question": "",
+                "choices": [],
+                "answer": 0
+            }
+        ]
+    },
+
     "color": {
         "title": "",
         "questions": [

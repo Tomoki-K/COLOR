@@ -6,7 +6,6 @@ import About from "./about.jsx";
 import Text from "./text.jsx";
 import Quiz from "./quiz.jsx";
 import PostTest from "./post-test.jsx";
-import PreTest from "./pre-test.jsx";
 require('../css/index.scss');
 
 class App extends React.Component {
@@ -40,8 +39,14 @@ class App extends React.Component {
     }
 
     unlockNextPage(current){
-        const idx = this.state.pages.findIndex(p => p.value == current);
-        this.state.pages[idx + 1].unlocked = true;
+        if (current == 'pre-test') {
+            // TODO: unlock levels according to test results
+
+        } else {
+            let pages = this.state.pages;
+            pages[pages.findIndex(p => p.value == current) + 1].unlocked = true;
+            this.setState({pages});
+        }
     }
 
     render() {
@@ -59,7 +64,7 @@ class App extends React.Component {
                                 <span className='green'>{this.state.color.g}</span>,
                                 <span className='blue'>{this.state.color.b})</span>
                         </p>
-                        <button className='titleBtn mainBtn large' onClick={() => this.jumpto('pre-test')}>start pre-test</button>
+                        <button className='titleBtn mainBtn large' onClick={() => {this.jumpto('quiz', 'pre-test')}}>start pre-test</button>
                     </div>
                 </If>
                 {/* ===== INDEX PAGE ===== */}
@@ -79,10 +84,6 @@ class App extends React.Component {
                             })}
                         </div>
                     </div>
-                </If>
-                {/* ===== PRE-TEST PAGE ===== */}
-                <If condition={this.state.page == 'pre-test'}>
-                    <PreTest />
                 </If>
                 {/* ===== TEXT PAGE ===== */}
                 <If condition={this.state.page == 'text'}>
