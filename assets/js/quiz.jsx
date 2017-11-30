@@ -21,7 +21,24 @@ export default class Quiz extends React.Component {
     }
 
     unlock(){
-        this.props.handleUnlock(this.props.textPage);
+        if (this.props.textPage == 'pre-test') {
+            // determine which chapters to unlock
+            const items = ['color', 'rgb', 'hex'];
+            let unlockItems = [];
+            items.forEach((item, id) => {
+                let cnt = 0;
+                for(let i = id * 3; i < (id + 1) * 3; i++){
+                    cnt += this.isCorrect(i);
+                }
+                if (cnt == 3) {
+                    unlockItems.push(item);
+                }
+            });
+            this.props.handleUnlock(this.props.textPage, unlockItems);
+        } else {
+            // unlock next chapter
+            this.props.handleUnlock(this.props.textPage);
+        }
         this.props.handleJump('index');
     }
 
@@ -75,11 +92,20 @@ export default class Quiz extends React.Component {
                 </If>
                 <If condition={this.state.marked}>
                     <p className='scoreText'>score: {this.state.correctCnt}/{this.state.questions.length}</p>
-                    <button
-                        className='prevBtn mainBtn medium'
-                        onClick={this.unlock}>
-                        back to index
-                    </button>
+                    <If condition={this.props.textPage == 'pre-test'}>
+                        <button
+                            className='nextBtn mainBtn medium'
+                            onClick={this.unlock}>
+                            to index
+                        </button>
+                    </If>
+                    <If condition={this.props.textPage != 'pre-test'}>
+                        <button
+                            className='prevBtn mainBtn medium'
+                            onClick={this.unlock}>
+                            back to index
+                        </button>
+                    </If>
                 </If>
             </div>
         );
