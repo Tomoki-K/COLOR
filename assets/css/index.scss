@@ -48,6 +48,20 @@ body {
         text-align: center;
     }
 }
+.fullWidthWrapper {
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    &.center {
+        position: fixed;
+        margin-top: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
 span {
     &.red {
         color: red;
@@ -138,24 +152,45 @@ span {
 
 // ===== index ===== //
 .indexList {
-    text-align: left;
-    margin-left: 200px;
-    p.unlocked {
-        .labelText {
+    display: inline-block;
+    margin-top: 20px;
+    .indexItem {
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+        text-align: center;
+        line-height: 200px;
+        border-radius: 50%;
+        -webkit-transition-duration: 0.3s; /* Safari */
+        transition-duration: 0.3s;
+        &.unlocked {
+            color: white;
+            background-color: black;
+            border: 5px solid black;
             cursor: pointer;
-            -webkit-transition-duration: 0.4s; /* Safari */
-            transition-duration: 0.4s;
             &:hover {
-                letter-spacing: 10px;
+                background-color: white;
+                color: black;
+                -webkit-transition-duration: 0.3s; /* Safari */
+                transition-duration: 0.3s;
             }
         }
-    }
-    .locked {
-        color: lightgray;
-        &::after {
-            margin-left: 5px;
-            font-family: FontAwesome;
-            content: '\f023'
+        &.locked {
+            color: white;
+            background-color: gray;
+            border: 5px solid gray;
+            opacity: 0.5;
+            &:hover {
+                opacity: 0.7;
+                -webkit-transition-duration: 0.3s; /* Safari */
+                transition-duration: 0.3s;
+            }
+            .labelText::after {
+                margin-left: 5px;
+                font-family: FontAwesome;
+                content: '\f023'
+            }
         }
     }
 }
