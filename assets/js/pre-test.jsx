@@ -73,7 +73,7 @@ export default class PreTest extends React.Component {
                             <h2>
                                 {sec.title}
                                 <If condition={this.state.marked}>
-                                    <span className='secCorrectCnt'>{this.state.secCorrectCnt[idx]}/3</span>
+                                    <span className='secCorrectCnt'>[{this.state.secCorrectCnt[idx]}/3]</span>
                                 </If>
                             </h2>
                             {sec.questions.map((q, id) => {

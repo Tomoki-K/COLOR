@@ -173,7 +173,7 @@ span {
         &::before {
             margin-right: 5px;
             font-family: FontAwesome;
-            content: "\f1db";
+            content: "\f101";
         }
     }
     img {
@@ -195,11 +195,17 @@ span {
     }
 }
 
-// ===== about ===== //
+// ===== quiz / pre-test ===== //
 .questionsWrapper {
+    ul {
+        padding-left: 20px;
+    }
     li {
         margin-top: 10px;
         list-style: none;
+        label {
+            cursor: pointer;
+        }
     }
     input {
         margin-right: 10px;
@@ -210,7 +216,7 @@ span {
             &::before {
                 margin-right: 5px;
                 font-family: FontAwesome;
-                content: "\f1db";
+                content: "\f101";
             }
         }
     }
