@@ -45,7 +45,7 @@ export default class About extends React.Component {
                         <th>企画・制作</th>
                         <td>
                             あざらし。<br/>
-                        同志社大学理工学部e-ラーニング2017 グループD
+                        同志社大学理工学部e-ラーニング2017 グループ10
                         </td>
                     </tr>
                     <tr>

@@ -25,13 +25,15 @@ export default class RadioList extends React.Component {
                     }
                     return (
                         <li className={`radioItem ${status}`} key={`${this.props.name}-${idx}`}>
-                            <input
-                                type='radio'
-                                name={this.props.name}
-                                disabled={this.props.disabled}
-                                key={`radio-${this.props.name}-${idx}`}
-                                onChange={() => this.handleChangeValue(idx)}/>
-                            {item}
+                            <label>
+                                <input
+                                    type='radio'
+                                    name={this.props.name}
+                                    disabled={this.props.disabled}
+                                    key={`radio-${this.props.name}-${idx}`}
+                                    onChange={() => this.handleChangeValue(idx)}></input>
+                                {item}
+                            </label>
                         </li>
                     )}
                 )}

@@ -173,7 +173,7 @@ span {
         &::before {
             margin-right: 5px;
             font-family: FontAwesome;
-            content: "\f1db";
+            content: "\f101";
         }
     }
     img {
@@ -195,16 +195,35 @@ span {
     }
 }
 
-// ===== about ===== //
+// ===== quiz / pre-test ===== //
 .questionsWrapper {
+    ul {
+        padding-left: 20px;
+    }
     li {
         margin-top: 10px;
         list-style: none;
+        label {
+            cursor: pointer;
+        }
     }
     input {
         margin-right: 10px;
     }
+    .sectionItem {
+        border-top: 1px solid lightgray;
+        h2 {
+            &::before {
+                margin-right: 5px;
+                font-family: FontAwesome;
+                content: "\f101";
+            }
+        }
+    }
     &.marked{
+        .secCorrectCnt {
+            margin-left: 30px;
+        }
         .question {
             &.correct {
                 &::after {
