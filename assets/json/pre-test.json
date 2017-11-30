@@ -1,0 +1,57 @@
+{
+    "pre-test":[
+        {
+            "title": "colorの問題",
+            "questions": [
+                {
+                    "question": "color1",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                },{
+                    "question": "color2",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                },
+                {
+                    "question": "color3",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                }
+            ]
+        },{
+            "title": "rgbの問題",
+            "questions": [
+                {
+                    "question": "rgb1",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                },{
+                    "question": "rgb2",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                },{
+                    "question": "rgb3",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                }
+            ]
+        },{
+            "title": "hexの問題",
+            "questions": [
+                {
+                    "question": "hex1",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                },{
+                    "question": "hex2",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                },{
+                    "question": "hex3",
+                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "answer": 0
+                }
+            ]
+        }
+    ]
+}

@@ -5,6 +5,7 @@ import { Header } from "./modules.jsx";
 import About from "./about.jsx";
 import Text from "./text.jsx";
 import Quiz from "./quiz.jsx";
+import PreTest from "./pre-test.jsx";
 import PostTest from "./post-test.jsx";
 require('../css/index.scss');
 
@@ -66,8 +67,12 @@ class App extends React.Component {
                                 <span className='green'>{this.state.color.g}</span>,
                                 <span className='blue'>{this.state.color.b})</span>
                         </p>
-                        <button className='titleBtn mainBtn large' onClick={() => {this.jumpto('quiz', 'pre-test')}}>start pre-test</button>
+                        <button className='titleBtn mainBtn large' onClick={() => {this.jumpto('pre-test')}}>start pre-test</button>
                     </div>
+                </If>
+                {/* ===== PRETEST PAGE ===== */}
+                <If condition={this.state.page == 'pre-test'}>
+                    <PreTest handleUnlock={this.unlockNextPage} handleJump={this.jumpto}/>
                 </If>
                 {/* ===== INDEX PAGE ===== */}
                 <If condition={this.state.page == 'index'}>
