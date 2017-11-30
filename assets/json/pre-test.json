@@ -1,7 +1,7 @@
 {
     "pre-test":[
         {
-            "title": "colorの問題",
+            "title": "色に関する問題",
             "questions": [
                 {
                     "question": "color1",
@@ -19,7 +19,7 @@
                 }
             ]
         },{
-            "title": "rgbの問題",
+            "title": "RGBに関する問題",
             "questions": [
                 {
                     "question": "rgb1",
@@ -36,7 +36,7 @@
                 }
             ]
         },{
-            "title": "hexの問題",
+            "title": "16進数に関する問題",
             "questions": [
                 {
                     "question": "hex1",

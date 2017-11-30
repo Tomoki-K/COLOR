@@ -204,7 +204,20 @@ span {
     input {
         margin-right: 10px;
     }
+    .sectionItem {
+        border-top: 1px solid lightgray;
+        h2 {
+            &::before {
+                margin-right: 5px;
+                font-family: FontAwesome;
+                content: "\f1db";
+            }
+        }
+    }
     &.marked{
+        .secCorrectCnt {
+            margin-left: 30px;
+        }
         .question {
             &.correct {
                 &::after {

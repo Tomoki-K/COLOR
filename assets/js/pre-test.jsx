@@ -12,7 +12,9 @@ export default class PreTest extends React.Component {
             questions: quiz['pre-test'],
             UserChoices: new Array(9).fill(null),
             marked: false,
-            correctCnt: 0
+            correctCnt: 0,
+            secCorrectCnt: new Array(3).fill(0),
+            unlockItems: []
         }
         this.unlock = this.unlock.bind(this);
         this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -21,21 +23,7 @@ export default class PreTest extends React.Component {
     }
 
     unlock(){
-        // determine which chapters to unlock
-        const items = ['color', 'rgb', 'hex'];
-        let unlockItems = [];
-        let idx = 0;
-        this.state.questions.forEach((sec, id) => {
-            let cnt = 0;
-            sec.questions.forEach((q) => {
-                cnt += q.answer === this.state.UserChoices[idx];
-                idx ++;
-            });
-            if (cnt == sec.questions.length) {
-                unlockItems.push(items[id]);
-            }
-        });
-        this.props.handleUnlock('pre-test', unlockItems);
+        this.props.handleUnlock('pre-test', this.state.unlockItems);
         this.props.handleJump('index');
     }
 
@@ -46,15 +34,28 @@ export default class PreTest extends React.Component {
     }
 
     checkAnswers(){
-        let cnt = 0;
+        // determine which chapters to unlock
+        const items = ['color', 'rgb', 'hex'];
+        let unlockItems = [];
+        let total_cnt = 0;
         let idx = 0;
-        this.state.questions.forEach((sec) => {
+        this.state.questions.forEach((sec, id) => {
+            let sec_cnt = 0;
             sec.questions.forEach((q) => {
-                cnt += q.answer === this.state.UserChoices[idx];
-                idx ++;
+                if (q.answer === this.state.UserChoices[idx]) {
+                    sec_cnt++;
+                    total_cnt++
+                };
+                idx++;
             });
+            let secCorrectCnt = this.state.secCorrectCnt;
+            secCorrectCnt[id] = sec_cnt;
+            this.setState({secCorrectCnt});
+            if (sec_cnt == sec.questions.length) {
+                unlockItems.push(items[id]);
+            }
         });
-        this.setState({correctCnt: cnt, marked: true});
+        this.setState({unlockItems, correctCnt: total_cnt, marked: true});
     }
 
     isCorrect(idx){
@@ -67,10 +68,14 @@ export default class PreTest extends React.Component {
             <div className={`mainWrapper questionsWrapper ${this.state.marked ? 'marked' : ''}`}>
                 <h1>pre-test</h1>
                 {this.state.questions.map((sec, idx) => {
-                    let sec_correctCnt = 0;
                     return(
-                        <div key={`section-${idx}`}>
-                            <h2>{sec.title}</h2>
+                        <div className='sectionItem' key={`section-${idx}`}>
+                            <h2>
+                                {sec.title}
+                                <If condition={this.state.marked}>
+                                    <span className='secCorrectCnt'>{this.state.secCorrectCnt[idx]}/3</span>
+                                </If>
+                            </h2>
                             {sec.questions.map((q, id) => {
                                 qIdx += 1;
                                 const status = q.answer === this.state.UserChoices[qIdx] ? 'correct' : 'wrong';
