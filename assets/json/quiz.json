@@ -44,13 +44,17 @@
         "title": "RGBについて",
         "questions": [
             {
-                "question": "RGBの色の中で含まれない色はどれか",
+                "question": "RGBの色の中で含まれない色はどれか？",
                 "choices": ["緑色","赤色","黄色","青色"],
                 "answer": 2
             },{
-                "question": "CMYKの色の中で含まれない色はどれか",
+                "question": "CMYKの色の中で含まれない色はどれか？",
                 "choices": ["白色","マゼンタ","黄色","黒色"],
                 "answer": 0
+            },{
+                "question": "RGBで表現できる色の数は？",
+                "choices": ["256","167万","1670万","1億"],
+                "answer": 2
             }
         ]
     }
