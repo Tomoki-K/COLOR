@@ -38,15 +38,17 @@ class App extends React.Component {
         });
     }
 
-    unlockNextPage(current){
+    unlockNextPage(current, unlockItems){
+        let pages = this.state.pages;
         if (current == 'pre-test') {
-            // TODO: unlock levels according to test results
+            unlockItems.forEach((item) => {
+                pages[pages.findIndex(p => p.value == item)].unlocked = true;
+            });
 
         } else {
-            let pages = this.state.pages;
             pages[pages.findIndex(p => p.value == current) + 1].unlocked = true;
-            this.setState({pages});
         }
+        this.setState({pages});
     }
 
     render() {

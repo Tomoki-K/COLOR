@@ -22,8 +22,42 @@
         "title": "",
         "questions": [
             {
-                "question": "",
-                "choices": [],
+                "question": "color1",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "color2",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "color3",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },
+            {
+                "question": "rgb1",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "rgb2",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "rgb3",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },
+            {
+                "question": "hex1",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "hex2",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                "answer": 0
+            },{
+                "question": "hex3",
+                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                 "answer": 0
             }
         ]
@@ -41,11 +75,21 @@
     },
 
     "hex": {
-        "title": "",
+        "title": "「?」に入る不等号を選べ",
         "questions": [
             {
-                "question": "",
-                "choices": [],
+                "question": "FB ? D9",
+                "choices": ["<", ">"],
+                "answer": 1
+            },
+            {
+                "question": "99 ? A1",
+                "choices": ["<", ">"],
+                "answer": 0
+            },
+            {
+                "question": "C9 ? CF",
+                "choices": ["<", ">"],
                 "answer": 0
             }
         ]
