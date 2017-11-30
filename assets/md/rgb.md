@@ -1,6 +1,10 @@
 # RGBについて
-foobar
-## heading 1
-hoge
-## heading 2
-hage
+## RGBとCMYKの特徴
+![cmyk](./assets/img/rgb-cmyk.jpg)
+
+### RGB
+RGBはそれぞれ、レッド(Red)、グリーン(Green)、ブルー(Blue)の3色を表す。  
+これらは光の3原色と呼ばれ、 ブラウン管、液晶モニター等で色を表現する為の手法で、上記3色を組み合わせて全ての色を表現している。
+### CMYK
+CMYKはそれぞれ、シアン(Cyan)、マゼンタ(Magenta)、イエロー(Yellow)、ブラック(Black)の4色を表す。
+インクで色での表現に使われ、プリンターは家庭用、業務用を問わず基本的にCMYKで色を表現しています。

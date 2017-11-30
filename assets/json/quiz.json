@@ -11,7 +11,7 @@
                 "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                 "answer": 0
             },{
-                "question": "問題文2",
+                "question": "問題文3",
                 "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                 "answer": 0
             }
@@ -41,11 +41,15 @@
     },
 
     "rgb": {
-        "title": "",
+        "title": "RGBについて",
         "questions": [
             {
-                "question": "",
-                "choices": [],
+                "question": "RGBの色の中で含まれない色はどれか",
+                "choices": ["緑色","赤色","黄色","青色"],
+                "answer": 2
+            },{
+                "question": "CMYKの色の中で含まれない色はどれか",
+                "choices": ["白色","マゼンタ","黄色","黒色"],
                 "answer": 0
             }
         ]
