@@ -13,6 +13,7 @@ export class Header extends React.Component {
             <div className='headerWrapper'>
                 <ul>
                     <li key='index'><p onClick={() => this.props.handleJump('index')}>index</p></li>
+                    <li key='title' className='center'><p onClick={() => this.props.handleJump('title')}>COLOR</p></li>
                     <li key='about' className='right'><p onClick={() => this.props.handleJump('about')}>about</p></li>
                 </ul>
             </div>
