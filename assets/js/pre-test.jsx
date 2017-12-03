@@ -1,6 +1,6 @@
 import React from "react";
 import RadioList from "./RadioList.jsx";
-import { If } from "./functions.jsx";
+import { If, generateColor, shuffle } from "./functions.jsx";
 
 // import questions
 const quiz = require('../json/pre-test.json');
@@ -8,12 +8,24 @@ const quiz = require('../json/pre-test.json');
 export default class PreTest extends React.Component {
     constructor(props){
         super(props);
+        let colorQuestions = [];
+        for (var i = 0; i < 3; i++) {
+            const qColor = generateColor();
+            let choices = shuffle([qColor, generateColor(), generateColor()]);
+            const answer = choices.findIndex(c => c == qColor);
+            colorQuestions.push({
+                question: `#${qColor.hex} はどの色?`,
+                choices,
+                answer
+            });
+        }
         this.state = {
             questions: quiz['pre-test'],
-            UserChoices: new Array(9).fill(null),
+            colorQuestions,
+            UserChoices: new Array(12).fill(null),
             marked: false,
             correctCnt: 0,
-            secCorrectCnt: new Array(3).fill(0),
+            secCorrectCnt: new Array(4).fill(0),
             unlockItems: []
         }
         this.unlock = this.unlock.bind(this);
@@ -36,11 +48,15 @@ export default class PreTest extends React.Component {
     checkAnswers(){
         // determine which chapters to unlock
         const items = ['hex', 'rgb', 'color'];
+        let secCorrectCnt = this.state.secCorrectCnt;
         let unlockItems = [];
+        let sec_cnt = 0;
         let total_cnt = 0;
         let idx = 0;
+
+        // regular questions
         this.state.questions.forEach((sec, id) => {
-            let sec_cnt = 0;
+            sec_cnt = 0;
             sec.questions.forEach((q) => {
                 if (q.answer === this.state.UserChoices[idx]) {
                     sec_cnt++;
@@ -48,14 +64,23 @@ export default class PreTest extends React.Component {
                 };
                 idx++;
             });
-            let secCorrectCnt = this.state.secCorrectCnt;
             secCorrectCnt[id] = sec_cnt;
-            this.setState({secCorrectCnt});
             if (sec_cnt == sec.questions.length) {
                 unlockItems.push(items[id]);
             }
         });
-        this.setState({unlockItems, correctCnt: total_cnt, marked: true});
+
+        // color questions
+        this.state.colorQuestions.forEach((q) => {
+            if(q.answer === this.state.UserChoices[idx]) {
+                sec_cnt++;
+                total_cnt++;
+            }
+            idx++;
+        });
+        secCorrectCnt[4] = sec_cnt;
+
+        this.setState({secCorrectCnt, unlockItems, correctCnt: total_cnt, marked: true});
     }
 
     isCorrect(idx){
@@ -83,7 +108,7 @@ export default class PreTest extends React.Component {
                                     <div className='questionItem' key={`questionBlock-${qIdx}`}>
                                         <h3 className={`question ${status}`}>{qIdx + 1}.{q.question}</h3>
                                         <RadioList
-                                            name={`answers-${qIdx}`}
+                                            name={`choices-${qIdx}`}
                                             qNum={qIdx}
                                             answer={q.answer}
                                             disabled={this.state.marked}
@@ -97,6 +122,35 @@ export default class PreTest extends React.Component {
                         </div>
                     );
                 })}
+                {/* same as post-test */}
+                <div className='sectionItem' key={`section-3`}>
+                    <h2>
+                        力試し問題
+                        <If condition={this.state.marked}>
+                            <span className='secCorrectCnt'>[{this.state.secCorrectCnt[4]}/3]</span>
+                        </If>
+                    </h2>
+                    {this.state.colorQuestions.map((q, id) => {
+                        qIdx += 1;
+                        const status = q.answer === this.state.UserChoices[qIdx] ? 'correct' : 'wrong';
+                        return(
+                            <div className='questionItem' key={`questionBlock-${qIdx}`}>
+                                <h3 className={`question ${status}`}>{qIdx + 1}.{q.question}</h3>
+                                <RadioList
+                                    name={`choices-${qIdx}`}
+                                    qNum={qIdx}
+                                    type='final'
+                                    answer={q.answer}
+                                    disabled={this.state.marked}
+                                    checked={this.state.UserChoices[qIdx]}
+                                    items={q.choices}
+                                    onChangeValue={this.handleChangeValue}
+                                    />
+                            </div>
+                        );
+                    })}
+                </div>
+
                 <br/>
                 <If condition={!this.state.marked}>
                     <button
@@ -106,7 +160,7 @@ export default class PreTest extends React.Component {
                     </button>
                 </If>
                 <If condition={this.state.marked}>
-                        <p className='scoreText'>score: {this.state.correctCnt}/9</p>
+                        <p className='scoreText'>score: {this.state.correctCnt}/12</p>
                     <button
                         className='nextBtn mainBtn medium'
                         onClick={this.unlock}>
