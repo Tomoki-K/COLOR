@@ -84,6 +84,7 @@ class App extends React.Component {
                                     <div key={`page-${page.value}`}
                                         className={`indexItem ${page.unlocked ? 'unlocked' : 'locked'}`}
                                         onClick={()=> (page.unlocked) ? this.jumpto(page.type, page.value) : {}}>
+                                        <div className='overlay'/>
                                         <span className='labelText'>{page.label}</span>
                                     </div>
                                 );
