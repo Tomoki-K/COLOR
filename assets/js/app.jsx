@@ -16,9 +16,9 @@ class App extends React.Component {
             page: 'title',
             textPage: null,
             pages: [
-                {label: '色の世界', type: 'text', value: 'color', unlocked: true},
+                {label: '16進数', type: 'text', value: 'hex', unlocked: true},
                 {label: 'RGB', type: 'text', value: 'rgb', unlocked: false},
-                {label: '16進数', type: 'text', value: 'hex', unlocked: false},
+                {label: 'カラーコード', type: 'text', value: 'color', unlocked: false},
                 {label: '最終テスト', type: 'post-test', value: '', unlocked: false}
             ],
 

@@ -1,4 +1,4 @@
-# RGBについて
+# RGB
 foobar
 ## heading 1
 hoge

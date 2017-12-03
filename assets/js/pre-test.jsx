@@ -35,7 +35,7 @@ export default class PreTest extends React.Component {
 
     checkAnswers(){
         // determine which chapters to unlock
-        const items = ['color', 'rgb', 'hex'];
+        const items = ['hex', 'rgb', 'color'];
         let unlockItems = [];
         let total_cnt = 0;
         let idx = 0;

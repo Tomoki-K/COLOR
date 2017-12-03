@@ -1,24 +1,24 @@
 {
     "pre-test":[
         {
-            "title": "色に関する問題",
+            "title": "16進数に関する問題",
             "questions": [
                 {
-                    "question": "color1",
+                    "question": "hex1",
                     "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                     "answer": 0
                 },{
-                    "question": "color2",
+                    "question": "hex2",
                     "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                     "answer": 0
-                },
-                {
-                    "question": "color3",
+                },{
+                    "question": "hex3",
                     "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                     "answer": 0
                 }
             ]
-        },{
+        },
+        {
             "title": "RGBに関する問題",
             "questions": [
                 {
@@ -35,19 +35,21 @@
                     "answer": 0
                 }
             ]
-        },{
-            "title": "16進数に関する問題",
+        },
+        {
+            "title": "色に関する問題",
             "questions": [
                 {
-                    "question": "hex1",
+                    "question": "color1",
                     "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                     "answer": 0
                 },{
-                    "question": "hex2",
+                    "question": "color2",
                     "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                     "answer": 0
-                },{
-                    "question": "hex3",
+                },
+                {
+                    "question": "color3",
                     "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
                     "answer": 0
                 }
