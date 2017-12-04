@@ -7,7 +7,9 @@ export default class RadioList extends React.Component {
     }
 
     handleChangeValue(ans){
-        this.props.onChangeValue({qNum: this.props.qNum, ans});
+        if (!this.props.disabled) {
+            this.props.onChangeValue({qNum: this.props.qNum, ans});
+        }
     }
 
     render() {
@@ -41,13 +43,12 @@ export default class RadioList extends React.Component {
                             {/* choices for 'final' quizes */}
                             <If condition={this.props.type == 'final'}>
                                 <label>
-                                    <input
-                                        type='radio'
+                                    <div
+                                        style={{backgroundColor: `#${item.hex}`}}
                                         name={this.props.name}
-                                        disabled={this.props.disabled}
+                                        className={`colorChoiceItems ${checked ? 'selected' : ''}`}
                                         key={`radio-${this.props.name}-${idx}`}
-                                        onChange={() => this.handleChangeValue(idx)}></input>
-                                    {item.hex}
+                                        onClick={() => this.handleChangeValue(idx)} />
                                 </label>
                             </If>
                         </li>

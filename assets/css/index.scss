@@ -267,6 +267,23 @@ span {
         label {
             cursor: pointer;
         }
+        .colorChoiceItems {
+            width: 60px;
+            height: 60px;
+            float: left;
+            border-radius: 50%;
+            padding: 5px;
+            margin-left: 10px;
+            border: 3px solid transparent;
+            background-clip: content-box;
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            &.selected {
+                border: 3px solid black;
+                -webkit-transition-duration: 0.2s;
+                transition-duration: 0.2s;
+            }
+        }
     }
     input {
         margin-right: 10px;
@@ -284,6 +301,7 @@ span {
     .questionItem {
         padding-left: 50px;
         padding-top: 10px;
+        display: table;
     }
     &.marked{
         .secCorrectCnt {
@@ -311,13 +329,22 @@ span {
             &.correct {
                 font-weight: bold;
                 color: green;
+                .colorChoiceItems {
+                    border-color: green;
+                }
             }
             &.wrong {
                 text-decoration: line-through;
+                .colorChoiceItems {
+                    border-color: lightgray;
+                }
             }
             &.correctAns {
                 font-weight: bold;
                 color: red;
+                .colorChoiceItems {
+                    border-color: red;
+                }
             }
         }
         .scoreText {
