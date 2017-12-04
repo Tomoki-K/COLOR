@@ -4,16 +4,16 @@
             "title": "16進数に関する問題",
             "questions": [
                 {
-                    "question": "hex1",
-                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "question": "D3 ? A1",
+                    "choices": ["<", ">"],
+                    "answer": 1
+                },{
+                    "question": "E4 ? EA",
+                    "choices": ["<", ">"],
                     "answer": 0
                 },{
-                    "question": "hex2",
-                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                    "answer": 0
-                },{
-                    "question": "hex3",
-                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
+                    "question": "1F ? F1",
+                    "choices": ["<", ">"],
                     "answer": 0
                 }
             ]

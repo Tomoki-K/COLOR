@@ -19,7 +19,7 @@ class App extends React.Component {
                 {label: '16進数', type: 'text', value: 'hex', unlocked: true},
                 {label: 'RGB', type: 'text', value: 'rgb', unlocked: false},
                 {label: 'カラーコード', type: 'text', value: 'color', unlocked: false},
-                {label: '最終テスト', type: 'post-test', value: '', unlocked: true}
+                {label: '最終テスト', type: 'post-test', value: '', unlocked: false}
             ],
 
             color: generateColor()
