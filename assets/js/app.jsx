@@ -16,9 +16,9 @@ class App extends React.Component {
             page: 'title',
             textPage: null,
             pages: [
-                {label: '色の世界', type: 'text', value: 'color', unlocked: true},
+                {label: '16進数', type: 'text', value: 'hex', unlocked: true},
                 {label: 'RGB', type: 'text', value: 'rgb', unlocked: false},
-                {label: '16進数', type: 'text', value: 'hex', unlocked: false},
+                {label: 'カラーコード', type: 'text', value: 'color', unlocked: false},
                 {label: '最終テスト', type: 'post-test', value: '', unlocked: false}
             ],
 
@@ -76,17 +76,17 @@ class App extends React.Component {
                 </If>
                 {/* ===== INDEX PAGE ===== */}
                 <If condition={this.state.page == 'index'}>
-                    <div className='mainWrapper center'>
+                    <div className='fullWidthWrapper center'>
                         <h1>index</h1>
                         <div className='indexList'>
                             {this.state.pages.map((page, idx)=>{
                                 return(
-                                    <p
-                                        className={page.unlocked ? 'unlocked' : 'locked'}
-                                        key={`page-${page.value}`}
+                                    <div key={`page-${page.value}`}
+                                        className={`indexItem ${page.unlocked ? 'unlocked' : 'locked'}`}
                                         onClick={()=> (page.unlocked) ? this.jumpto(page.type, page.value) : {}}>
-                                        {idx + 1}.  <span className='labelText'>{page.label}</span>
-                                    </p>
+                                        <div className='overlay'/>
+                                        <span className='labelText'>{page.label}</span>
+                                    </div>
                                 );
                             })}
                         </div>
