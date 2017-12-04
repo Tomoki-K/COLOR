@@ -21,7 +21,7 @@
     },
 
     "hex": {
-        "title": "「?」に入る不等号を選べ",
+        "title": "「?」に入る不等号を選ぼう！",
         "questions": [
             {
                 "question": "FB ? D9",
@@ -42,14 +42,14 @@
     },
 
     "rgb": {
-        "title": "RGBについて",
+        "title": "RGBについての復習しよう！",
         "questions": [
             {
-                "question": "RGBの色の中で含まれない色はどれか？",
+                "question": "RGBの色の中で含まれない色は？",
                 "choices": ["緑色","赤色","黄色","青色"],
                 "answer": 2
             },{
-                "question": "CMYKの色の中で含まれない色はどれか？",
+                "question": "CMYKの色の中で含まれない色は？",
                 "choices": ["白色","マゼンタ","黄色","黒色"],
                 "answer": 0
             },{
