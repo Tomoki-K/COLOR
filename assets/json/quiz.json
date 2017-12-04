@@ -1,23 +1,4 @@
 {
-    "sample": {
-        "title": "適当なタイトル",
-        "questions": [
-            {
-                "question": "問題文1",
-                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                "answer": 0
-            },{
-                "question": "問題文2",
-                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                "answer": 0
-            },{
-                "question": "問題文2",
-                "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                "answer": 0
-            }
-        ]
-    },
-
     "color": {
         "title": "",
         "questions": [
@@ -40,7 +21,7 @@
     },
 
     "hex": {
-        "title": "「?」に入る不等号を選べ",
+        "title": "「?」に入る不等号を選ぼう！",
         "questions": [
             {
                 "question": "FB ? D9",
@@ -61,12 +42,20 @@
     },
 
     "rgb": {
-        "title": "",
+        "title": "RGBについての復習しよう！",
         "questions": [
             {
-                "question": "",
-                "choices": [],
+                "question": "RGBの色の中で含まれない色は？",
+                "choices": ["緑色","赤色","黄色","青色"],
+                "answer": 2
+            },{
+                "question": "CMYKの色の中で含まれない色は？",
+                "choices": ["白色","マゼンタ","黄色","黒色"],
                 "answer": 0
+            },{
+                "question": "RGBで表現できる色の数は？",
+                "choices": ["256","167万","1670万","1億"],
+                "answer": 2
             }
         ]
     }
