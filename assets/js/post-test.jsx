@@ -1,13 +1,22 @@
 import React from "react";
 import { If, generateColor, shuffle } from './functions.jsx';
 
+const kemonoMessages = [
+    '「へーきへーき!フレンズによって得意なこと違うから!」(サーバル)',
+    '「本当につらいときは誰かを頼ったっていいのよ」(かば)',
+    '「かばんちゃんはすっごい頑張り屋だから、きっとすぐ何が得意か分かるよ！」(サーバル)',
+    '「おいしいものを食べてこその人生なのです」(はかせ)',
+    '「やりますねぇ」(はかせ/じょしゅ)',
+    '「無敵の布陣なのだ！」(あらい)'
+];
+
 export default class PostTest extends React.Component {
     constructor() {
         super();
         const choices = this.generateChoices();
         this.state = {
             qNum: 0,
-            message: '5問やで',
+            message: 'カラーコードが表す色を当ててね！',
             marked: false,
             answerIdx: Math.floor(Math.random() * choices.length),
             selectedIdx: null,
@@ -31,6 +40,9 @@ export default class PostTest extends React.Component {
     }
 
     checkAnswer() {
+        if (this.state.marked) {
+            return;
+        }
         let correctCnt = this.state.correctCnt;
         let message = 'ちがうよ！'
         if (this.state.answerIdx === this.state.selectedIdx) {
@@ -56,9 +68,10 @@ export default class PostTest extends React.Component {
     }
 
     select(idx) {
-        if (!this.state.marked) {
-            this.setState({selectedIdx: idx});
+        if (this.state.marked) {
+            return;
         }
+        this.setState({selectedIdx: idx});
     }
 
     render() {
@@ -93,13 +106,15 @@ export default class PostTest extends React.Component {
                     <button
                         className='checkBtn mainBtn large'
                         onClick={() => this.checkAnswer()}>
-                        check
+                        check answer
                     </button>
                 </If>
                 <If condition = {this.state.qNum == 5}>
+                    <p>結果：</p>
                     <h1>{this.state.correctCnt}/5</h1>
+                    <p>{kemonoMessages[this.state.correctCnt]}</p>
                     <button
-                        className='mainBtn large'>
+                        className='checkBtn mainBtn large'>
                         アンケート
                     </button>
                 </If>
