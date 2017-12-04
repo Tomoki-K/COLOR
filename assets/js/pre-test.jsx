@@ -9,7 +9,7 @@ export default class PreTest extends React.Component {
     constructor(props){
         super(props);
         let colorQuestions = [];
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 5; i++) {
             const qColor = generateColor();
             let choices = shuffle([qColor, generateColor(), generateColor()]);
             const answer = choices.findIndex(c => c == qColor);
@@ -22,7 +22,7 @@ export default class PreTest extends React.Component {
         this.state = {
             questions: quiz['pre-test'],
             colorQuestions,
-            UserChoices: new Array(12).fill(null),
+            UserChoices: new Array(14).fill(null),
             marked: false,
             correctCnt: 0,
             secCorrectCnt: new Array(4).fill(0),
@@ -71,6 +71,7 @@ export default class PreTest extends React.Component {
         });
 
         // color questions
+        sec_cnt = 0;
         this.state.colorQuestions.forEach((q) => {
             if(q.answer === this.state.UserChoices[idx]) {
                 sec_cnt++;
@@ -127,7 +128,7 @@ export default class PreTest extends React.Component {
                     <h2>
                         力試し問題
                         <If condition={this.state.marked}>
-                            <span className='secCorrectCnt'>[{this.state.secCorrectCnt[4]}/3]</span>
+                            <span className='secCorrectCnt'>[{this.state.secCorrectCnt[4]}/5]</span>
                         </If>
                     </h2>
                     {this.state.colorQuestions.map((q, id) => {
@@ -160,7 +161,7 @@ export default class PreTest extends React.Component {
                     </button>
                 </If>
                 <If condition={this.state.marked}>
-                        <p className='scoreText'>score: {this.state.correctCnt}/12</p>
+                        <p className='scoreText'>score: {this.state.correctCnt}/14</p>
                     <button
                         className='nextBtn mainBtn medium'
                         onClick={this.unlock}>

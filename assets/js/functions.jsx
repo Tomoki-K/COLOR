@@ -8,6 +8,11 @@ export function generateColor() {
         g: Math.round(Math.random() * 256),
         b: Math.round(Math.random() * 256)
     };
+    // re-generate color if color is too dark or bright
+    const sum = color.r + color.g + color.b;
+    if ( sum < 100 || sum > 700 ) {
+        generateColor();
+    }
     color.hex = toPaddedHex(color.r) + toPaddedHex(color.g) + toPaddedHex(color.b);
     return color;
 }
