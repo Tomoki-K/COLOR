@@ -22,17 +22,17 @@
             "title": "RGBに関する問題",
             "questions": [
                 {
-                    "question": "rgb1",
-                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                    "answer": 0
+                    "question": "RGBはどの出力機器に用いられる？",
+                    "choices": ["プリンター", "液晶モニター"],
+                    "answer": 1
                 },{
-                    "question": "rgb2",
-                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                    "answer": 0
+                    "question": "RGBは主に何と呼ばれている？",
+                    "choices": ["闇の3原色", "信号の3原色", "光の3原色", "魔の3原色"],
+                    "answer": 2
                 },{
-                    "question": "rgb3",
-                    "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4"],
-                    "answer": 0
+                    "question": "各色につき濃度は何段階設定できる？",
+                    "choices": ["8段階", "16段階", "64段階", "256段階"],
+                    "answer": 3
                 }
             ]
         },
