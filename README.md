@@ -4,20 +4,22 @@
 16進数カラーコードについて理解するための教材．
 
 ## Getting started
-1. clone repository
+1. クローンせぃ
 ```
 $ cd (your directory)
 $ git clone https://github.com/Tomoki-K/e-learning.git
 ```
 
-2. install packages  
-get npm from [here](https://nodejs.org/dist/v6.11.5/node-v6.11.5.pkg) if not yet installed.
+2. パッケージをインストールせぃ
+(npmが入ってなかったら[ここ](https://nodejs.org/dist/v6.11.5/node-v6.11.5.pkg)からインストールせぃ)
 ```
 $ cd e-learning
 $ make install
 ```
 
-3. run!
+3. うぇいそいや
 ```
 $ make run
 ```
+## Environment
+Chromeのみ動作確認済み
