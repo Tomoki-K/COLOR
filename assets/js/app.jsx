@@ -21,11 +21,12 @@ class App extends React.Component {
                 {label: 'カラーコード', type: 'text', value: 'color', unlocked: false},
                 {label: '最終テスト', type: 'post-test', value: '', unlocked: false}
             ],
-
-            color: generateColor()
+            color: generateColor(),
+            hover: false
         };
         this.jumpto = this.jumpto.bind(this);
         this.unlockNextPage = this.unlockNextPage.bind(this);
+        this.toggleHover = this.toggleHover.bind(this);
     }
 
     newColor() {
@@ -52,22 +53,37 @@ class App extends React.Component {
         this.setState({pages});
     }
 
+    toggleHover(){
+        this.setState({hover: !this.state.hover});
+    }
+
     render() {
+        const color = this.state.color;
+        const textColor = (color.r * 0.299 + color.g * 0.587 + color.b * 0.114) > 186 ? '#000000' : '#FFFFFF';
+        const invertColor = textColor == '#000000' ? '#FFFFFF' : '#000000';
+        const normalStyle = {color: `#${color.hex}`, backgroundColor: textColor, borderColor: textColor};
+        const hoverStyle = {color: textColor, backgroundColor: 'transparent', borderColor: textColor};
+        const buttonStyle = this.state.hover ? hoverStyle : normalStyle;
         return (
             <div>
                 <Header handleJump={this.jumpto}/>
                 {/* ===== TITLE PAGE ===== */}
                 <If condition={this.state.page == 'title'}>
-                    <div className='mainWrapper center'>
-                        <h1 className='title'
-                            onClick={() => this.newColor()}
-                            style={{color: `#${this.state.color.hex}`}}>COLOR</h1>
-                        <p>#{this.state.color.hex} rgb(
-                                <span className='red'>{this.state.color.r}</span>,
-                                <span className='green'>{this.state.color.g}</span>,
-                                <span className='blue'>{this.state.color.b})</span>
-                        </p>
-                        <button className='titleBtn mainBtn large' onClick={() => {this.jumpto('pre-test')}}>start pre-test</button>
+                    <div className='fullScreenWapper' style={{backgroundColor: `#${color.hex}`}}>
+                        <div className='mainWrapper center'>
+                            <h1 className='title' style={{color: textColor}} onClick={() => this.newColor()}>COLOR</h1>
+                            <p style={{color: textColor}} >#{color.hex} rgb(
+                                    <span className='red'>{color.r}</span>,
+                                    <span className='green'>{color.g}</span>,
+                                    <span className='blue'>{color.b}</span>)
+                            </p>
+                            <button
+                                className='titleBtn mainBtn large'
+                                style={buttonStyle}
+                                onMouseEnter={this.toggleHover}
+                                onMouseLeave={this.toggleHover}
+                                onClick={() => {this.jumpto('pre-test')}}>start pre-test</button>
+                        </div>
                     </div>
                 </If>
                 {/* ===== PRETEST PAGE ===== */}

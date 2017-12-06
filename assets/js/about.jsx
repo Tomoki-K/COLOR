@@ -39,7 +39,7 @@ export default class About extends React.Component {
                     </tr>
                     <tr>
                         <th>使用料</th>
-                        <td>5000兆円</td>
+                        <td>無料(有料コンテンツあり)</td>
                     </tr>
                     <tr>
                         <th>企画・制作</th>
