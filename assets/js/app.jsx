@@ -69,10 +69,12 @@ class App extends React.Component {
                 <Header handleJump={this.jumpto}/>
                 {/* ===== TITLE PAGE ===== */}
                 <If condition={this.state.page == 'title'}>
-                    <div className='fullScreenWapper' style={{backgroundColor: `#${color.hex}`}}>
+                    <div className='fullScreenWapper'
+                        style={{backgroundColor: `#${color.hex}`}}
+                         onClick={() => this.newColor()}>
                         <div className='mainWrapper center'>
-                            <h1 className='title' style={{color: textColor}} onClick={() => this.newColor()}>COLOR</h1>
-                            <p style={{color: textColor}} >#{color.hex} rgb(
+                            <h1 className='title' style={{color: textColor}}>COLOR</h1>
+                            <p className='rgbValues' style={{color: textColor}} >#{color.hex} rgb(
                                     <span className='red'>{color.r}</span>,
                                     <span className='green'>{color.g}</span>,
                                     <span className='blue'>{color.b}</span>)
