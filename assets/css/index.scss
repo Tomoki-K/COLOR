@@ -67,17 +67,7 @@ body {
         text-align: center;
     }
 }
-span {
-    &.red {
-        color: red;
-    }
-    &.green {
-        color: green;
-    }
-    &.blue {
-        color: blue;
-    }
-}
+
 .mainBtn {
     &.large {
         border-width: 5px;
@@ -150,6 +140,29 @@ span {
 }
 .rgbValues {
     user-select: none;
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 20px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    &:hover {
+        background-color: white;
+        color: black!important;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+    span {
+        &.red {
+            color: red;
+        }
+        &.green {
+            color: green;
+        }
+        &.blue {
+            color: blue;
+        }
+    }
 }
 
 .titleBtn {
