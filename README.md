@@ -1,5 +1,7 @@
 # e-learning 教材
 
+https://tomoki-k.github.io/e-learning/
+
 ## About
 16進数カラーコードについて理解するための教材．
 
@@ -21,5 +23,3 @@ $ make install
 ```
 $ make run
 ```
-## Environment
-Chromeのみ動作確認済み
