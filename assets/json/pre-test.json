@@ -1,25 +1,25 @@
 {
     "pre-test":[
         {
-            "title": "16進数に関する問題",
+            "title": "[16進数] (?)に入る不等号を選んでね！",
             "questions": [
                 {
-                    "question": "D3 ? A1",
+                    "question": "D3 (?) A1",
                     "choices": ["<", ">"],
                     "answer": 1
                 },{
-                    "question": "E4 ? EA",
+                    "question": "E4 (?) EA",
                     "choices": ["<", ">"],
                     "answer": 0
                 },{
-                    "question": "1F ? F1",
+                    "question": "1F (?) F1",
                     "choices": ["<", ">"],
                     "answer": 0
                 }
             ]
         },
         {
-            "title": "RGBに関する問題",
+            "title": "[RGB]",
             "questions": [
                 {
                     "question": "RGBはどの出力機器に用いられる？",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "title": "色に関する問題",
+            "title": "[カラーコード]",
             "questions": [
                 {
                     "question": "Web上で表現できる色の総数は?",

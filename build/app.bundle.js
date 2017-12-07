@@ -19434,7 +19434,7 @@ exports.default = PreTest;
 /* 141 */
 /***/ (function(module, exports) {
 
-module.exports = {"pre-test":[{"title":"16進数に関する問題","questions":[{"question":"D3 ? A1","choices":["<",">"],"answer":1},{"question":"E4 ? EA","choices":["<",">"],"answer":0},{"question":"1F ? F1","choices":["<",">"],"answer":0}]},{"title":"RGBに関する問題","questions":[{"question":"RGBはどの出力機器に用いられる？","choices":["プリンター","液晶モニター"],"answer":1},{"question":"RGBは主に何と呼ばれている？","choices":["闇の3原色","信号の3原色","光の3原色","魔の3原色"],"answer":2},{"question":"各色につき濃度は何段階設定できる？","choices":["8段階","16段階","64段階","256段階"],"answer":3}]},{"title":"色に関する問題","questions":[{"question":"Web上で表現できる色の総数は?","choices":["100万色","1700万色","500万色"],"answer":1},{"question":"16進数表記のカラーコードでは一番先頭につける記号は?","choices":["シャープ(#)","ドルマーク($)","アスタリスク(*)"],"answer":0},{"question":"カラーコードを表現する3色の順番は?","choices":["赤・緑・青","緑・青・赤","青・赤・緑"],"answer":0}]}]}
+module.exports = {"pre-test":[{"title":"[16進数] (?)に入る不等号を選んでね！","questions":[{"question":"D3 (?) A1","choices":["<",">"],"answer":1},{"question":"E4 (?) EA","choices":["<",">"],"answer":0},{"question":"1F (?) F1","choices":["<",">"],"answer":0}]},{"title":"[RGB]","questions":[{"question":"RGBはどの出力機器に用いられる？","choices":["プリンター","液晶モニター"],"answer":1},{"question":"RGBは主に何と呼ばれている？","choices":["闇の3原色","信号の3原色","光の3原色","魔の3原色"],"answer":2},{"question":"各色につき濃度は何段階設定できる？","choices":["8段階","16段階","64段階","256段階"],"answer":3}]},{"title":"[カラーコード]","questions":[{"question":"Web上で表現できる色の総数は?","choices":["100万色","1700万色","500万色"],"answer":1},{"question":"16進数表記のカラーコードでは一番先頭につける記号は?","choices":["シャープ(#)","ドルマーク($)","アスタリスク(*)"],"answer":0},{"question":"カラーコードを表現する3色の順番は?","choices":["赤・緑・青","緑・青・赤","青・赤・緑"],"answer":0}]}]}
 
 /***/ }),
 /* 142 */
