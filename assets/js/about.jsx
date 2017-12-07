@@ -4,7 +4,7 @@ export default class About extends React.Component {
     render() {
         return (
             <div className='mainWrapper center'>
-                <h1>LOM情報</h1>
+                <h1>ABOUT</h1>
                 <table className='LOMtable'>
                     <tr>
                         <th>教材名称</th>

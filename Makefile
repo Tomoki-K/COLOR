@@ -3,5 +3,5 @@ install:
 
 run:
 	npm run webpack
-	open app.html
+	open index.html
 	npm run webpack -- --watch
