@@ -114,7 +114,8 @@ export default class PostTest extends React.Component {
                     <h1>{this.state.correctCnt}/5</h1>
                     <p>{kemonoMessages[this.state.correctCnt]}</p>
                     <button
-                        className='checkBtn mainBtn large'>
+                        className='checkBtn mainBtn large'
+                        onClick={() => this.props.jumpToSurvey(this.state.correctCnt)}>
                         アンケート
                     </button>
                 </If>

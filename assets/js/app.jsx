@@ -22,11 +22,14 @@ class App extends React.Component {
                 {label: '最終テスト', type: 'post-test', value: '', unlocked: false}
             ],
             color: generateColor(),
-            hover: false
+            hover: false,
+            preTestScore: 0,
         };
         this.jumpto = this.jumpto.bind(this);
         this.unlockNextPage = this.unlockNextPage.bind(this);
         this.toggleHover = this.toggleHover.bind(this);
+        this.setPreTestScore = this.setPreTestScore.bind(this);
+        this.jumpToSurvey = this.jumpToSurvey.bind(this);
     }
 
     newColor() {
@@ -55,6 +58,15 @@ class App extends React.Component {
 
     toggleHover(){
         this.setState({hover: !this.state.hover});
+    }
+
+    setPreTestScore(score){
+        this.setState({preTestScore: score});
+    }
+
+    jumpToSurvey(score){
+        const url = `https://docs.google.com/forms/d/e/1FAIpQLScy8Z3NvWRnDkU-mljiadEaE02RK3P-W9G0fLnbr4yPaSu4vA/viewform?usp=pp_url&entry.1899721567=${this.state.preTestScore}&entry.660817417=${score}&entry.1671023033`
+        window.open(url, '_blank');
     }
 
     render() {
@@ -90,7 +102,10 @@ class App extends React.Component {
                 </If>
                 {/* ===== PRETEST PAGE ===== */}
                 <If condition={this.state.page == 'pre-test'}>
-                    <PreTest handleUnlock={this.unlockNextPage} handleJump={this.jumpto}/>
+                    <PreTest
+                        handleUnlock={this.unlockNextPage}
+                        handleJump={this.jumpto}
+                        setPreTestScore={this.setPreTestScore}/>
                 </If>
                 {/* ===== INDEX PAGE ===== */}
                 <If condition={this.state.page == 'index'}>
@@ -123,7 +138,7 @@ class App extends React.Component {
                 </If>
                 {/* ===== POST-TEST PAGE ===== */}
                 <If condition={this.state.page == 'post-test'}>
-                    <PostTest />
+                    <PostTest jumpToSurvey={this.jumpToSurvey}/>
                 </If>
                 {/* ===== ABOUT PAGE ===== */}
                 <If condition={this.state.page == 'about'}>

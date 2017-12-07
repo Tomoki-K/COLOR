@@ -80,7 +80,7 @@ export default class PreTest extends React.Component {
             idx++;
         });
         secCorrectCnt[4] = sec_cnt;
-
+        this.props.setPreTestScore(sec_cnt);
         this.setState({secCorrectCnt, unlockItems, correctCnt: total_cnt, marked: true});
     }
 

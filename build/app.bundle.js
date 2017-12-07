@@ -2517,11 +2517,14 @@ var App = function (_React$Component) {
             textPage: null,
             pages: [{ label: '16進数', type: 'text', value: 'hex', unlocked: true }, { label: 'RGB', type: 'text', value: 'rgb', unlocked: false }, { label: 'カラーコード', type: 'text', value: 'color', unlocked: false }, { label: '最終テスト', type: 'post-test', value: '', unlocked: false }],
             color: (0, _functions.generateColor)(),
-            hover: false
+            hover: false,
+            preTestScore: 0
         };
         _this.jumpto = _this.jumpto.bind(_this);
         _this.unlockNextPage = _this.unlockNextPage.bind(_this);
         _this.toggleHover = _this.toggleHover.bind(_this);
+        _this.setPreTestScore = _this.setPreTestScore.bind(_this);
+        _this.jumpToSurvey = _this.jumpToSurvey.bind(_this);
         return _this;
     }
 
@@ -2559,6 +2562,17 @@ var App = function (_React$Component) {
         key: "toggleHover",
         value: function toggleHover() {
             this.setState({ hover: !this.state.hover });
+        }
+    }, {
+        key: "setPreTestScore",
+        value: function setPreTestScore(score) {
+            this.setState({ preTestScore: score });
+        }
+    }, {
+        key: "jumpToSurvey",
+        value: function jumpToSurvey(score) {
+            var url = "https://docs.google.com/forms/d/e/1FAIpQLScy8Z3NvWRnDkU-mljiadEaE02RK3P-W9G0fLnbr4yPaSu4vA/viewform?usp=pp_url&entry.1899721567=" + this.state.preTestScore + "&entry.660817417=" + score + "&entry.1671023033";
+            window.open(url, '_blank');
         }
     }, {
         key: "render",
@@ -2636,7 +2650,10 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                     _functions.If,
                     { condition: this.state.page == 'pre-test' },
-                    _react2.default.createElement(_preTest2.default, { handleUnlock: this.unlockNextPage, handleJump: this.jumpto })
+                    _react2.default.createElement(_preTest2.default, {
+                        handleUnlock: this.unlockNextPage,
+                        handleJump: this.jumpto,
+                        setPreTestScore: this.setPreTestScore })
                 ),
                 _react2.default.createElement(
                     _functions.If,
@@ -2687,7 +2704,7 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                     _functions.If,
                     { condition: this.state.page == 'post-test' },
-                    _react2.default.createElement(_postTest2.default, null)
+                    _react2.default.createElement(_postTest2.default, { jumpToSurvey: this.jumpToSurvey })
                 ),
                 _react2.default.createElement(
                     _functions.If,
@@ -19261,7 +19278,7 @@ var PreTest = function (_React$Component) {
                 idx++;
             });
             secCorrectCnt[4] = sec_cnt;
-
+            this.props.setPreTestScore(sec_cnt);
             this.setState({ secCorrectCnt: secCorrectCnt, unlockItems: unlockItems, correctCnt: total_cnt, marked: true });
         }
     }, {
@@ -19606,7 +19623,10 @@ var PostTest = function (_React$Component) {
                     _react2.default.createElement(
                         'button',
                         {
-                            className: 'checkBtn mainBtn large' },
+                            className: 'checkBtn mainBtn large',
+                            onClick: function onClick() {
+                                return _this3.props.jumpToSurvey(_this3.state.correctCnt);
+                            } },
                         '\u30A2\u30F3\u30B1\u30FC\u30C8'
                     )
                 )
