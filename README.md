@@ -9,7 +9,7 @@ https://tomoki-k.github.io/COLOR/
 1. クローンせぃ
 ```
 $ cd (your directory)
-$ git clone https://github.com/Tomoki-K/e-learning.git
+$ git clone https://github.com/Tomoki-K/COLOR.git
 ```
 
 2. パッケージをインストールせぃ
