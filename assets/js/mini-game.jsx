@@ -7,7 +7,7 @@ export default class PostTest extends React.Component {
         super();
         this.state = {
             combo: 0,
-            status: '私はサーバルキャットのサーバルだよ！',
+            message: 'カラーコードが表す色を当ててね！',
             answer: answer,
             choices: this.generateChoices(answer)
         };
@@ -34,12 +34,12 @@ export default class PostTest extends React.Component {
             this.newColorSet();
             this.setState({
                 combo: this.state.combo + 1,
-                status: 'すっごーーーい！！'
+                message: 'すっごーーーい！！'
             });
         } else {
             this.setState({
                 combo: 0,
-                status: `ちがうよ！ それは #${selection} ！`
+                message: `ちがうよ！ それは #${selection} ！`
             });
         }
     }
@@ -47,8 +47,8 @@ export default class PostTest extends React.Component {
     render() {
         return (
             <div className='mainWrapper center'>
-                <h1>#{this.state.answer.hex} はどの色？</h1>
-                <p>{this.state.status}</p>
+                <h1>#{this.state.answer.hex}</h1>
+                <p>{this.state.message}</p>
                 <div className='choice-box'>
                     {this.state.choices.map((color, idx) => {
                         return (
@@ -62,6 +62,11 @@ export default class PostTest extends React.Component {
                     })}
                 </div>
                 <p>combo: {this.state.combo}</p>
+                <button
+                    className='mainBtn prevBtn'
+                    onClick={() => this.props.handleJump('index')}>
+                    done
+                </button>
             </div>
         );
     }

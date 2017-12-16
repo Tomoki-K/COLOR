@@ -2494,6 +2494,10 @@ var _postTest = __webpack_require__(142);
 
 var _postTest2 = _interopRequireDefault(_postTest);
 
+var _miniGame = __webpack_require__(143);
+
+var _miniGame2 = _interopRequireDefault(_miniGame);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2685,6 +2689,15 @@ var App = function (_React$Component) {
                                     )
                                 );
                             })
+                        ),
+                        _react2.default.createElement(
+                            "button",
+                            {
+                                className: "mainBtn center minigame",
+                                onClick: function onClick() {
+                                    return _this2.jumpto('mini-game');
+                                } },
+                            "mini-game"
                         )
                     )
                 ),
@@ -2705,6 +2718,11 @@ var App = function (_React$Component) {
                     _functions.If,
                     { condition: this.state.page == 'post-test' },
                     _react2.default.createElement(_postTest2.default, { jumpToSurvey: this.jumpToSurvey })
+                ),
+                _react2.default.createElement(
+                    _functions.If,
+                    { condition: this.state.page == 'mini-game' },
+                    _react2.default.createElement(_miniGame2.default, { handleJump: this.jumpto })
                 ),
                 _react2.default.createElement(
                     _functions.If,
@@ -11229,7 +11247,7 @@ exports = module.exports = __webpack_require__(54)(undefined);
 
 
 // module
-exports.push([module.i, ".headerWrapper ul {\n  z-index: 10;\n  position: fixed;\n  width: 100%;\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  top: 0;\n  overflow: hidden;\n  background-color: #333; }\n\n.headerWrapper li {\n  cursor: pointer;\n  float: left; }\n  .headerWrapper li p {\n    display: block;\n    color: white;\n    text-align: center;\n    padding: 14px 16px;\n    text-decoration: none; }\n  .headerWrapper li.center {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%); }\n  .headerWrapper li.right {\n    float: right; }\n\nbody {\n  font-family: 'Droid Sans Mono', monospace;\n  letter-spacing: 5px;\n  margin: 0; }\n\n.mainWrapper {\n  position: relative;\n  margin-top: 100px;\n  width: 60%;\n  left: 50%;\n  transform: translateX(-50%); }\n  .mainWrapper.center {\n    position: fixed;\n    margin-top: 0;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    text-align: center; }\n\n.fullWidthWrapper {\n  position: relative;\n  margin-top: 100px;\n  width: 100%;\n  left: 50%;\n  transform: translateX(-50%); }\n  .fullWidthWrapper.center {\n    position: fixed;\n    margin-top: 0;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    text-align: center; }\n\n.mainBtn {\n  border-style: solid;\n  border-color: #333;\n  background-color: #333;\n  color: white;\n  border-radius: 0;\n  border-width: 5px;\n  padding: 20px;\n  font-family: inherit;\n  font-size: 1.2em;\n  -webkit-transition-duration: 0.4s;\n  transition-duration: 0.4s; }\n  .mainBtn.large {\n    border-width: 5px;\n    padding: 20px; }\n  .mainBtn.medium {\n    border-width: 3px;\n    padding: 10px; }\n  .mainBtn.center {\n    position: relative;\n    left: 50%;\n    transform: translateX(-50%); }\n  .mainBtn:hover {\n    background-color: white;\n    color: #333; }\n\n.nextBtn {\n  cursor: pointer;\n  float: right; }\n  .nextBtn::after {\n    margin-left: 10px;\n    font-family: FontAwesome;\n    content: '\\F105'; }\n\n.prevBtn {\n  cursor: pointer;\n  float: left;\n  margin: 30px 0 100px 0; }\n  .prevBtn::before {\n    margin-right: 10px;\n    font-family: FontAwesome;\n    content: '\\F104'; }\n\n.fullScreenWapper {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s; }\n\n.title {\n  font-size: 7em;\n  margin: 0;\n  user-select: none;\n  letter-spacing: 10px;\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s; }\n  .title::selection {\n    background-color: white; }\n\n.rgbValues {\n  user-select: none;\n  padding: 10px;\n  width: 50%;\n  margin: 0 auto;\n  border-radius: 20px;\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s; }\n  .rgbValues:hover {\n    background-color: white;\n    color: black !important;\n    -webkit-transition-duration: 0.3s;\n    transition-duration: 0.3s; }\n  .rgbValues span.red {\n    color: red; }\n  .rgbValues span.green {\n    color: green; }\n  .rgbValues span.blue {\n    color: blue; }\n\n.titleBtn {\n  user-select: none;\n  margin-top: 30px; }\n\n.indexList {\n  display: inline-block;\n  margin-top: 20px; }\n  .indexList .indexItem {\n    float: left;\n    width: 200px;\n    height: 200px;\n    margin: 5px;\n    text-align: center;\n    line-height: 200px;\n    border-radius: 50%;\n    -webkit-transition-duration: 0.3s;\n    transition-duration: 0.3s; }\n    .indexList .indexItem .overlay {\n      position: absolute;\n      width: 0;\n      height: 0;\n      z-index: -1;\n      border-radius: 50%;\n      border: 100px solid black;\n      -webkit-transition-duration: 0.3s;\n      transition-duration: 0.3s; }\n    .indexList .indexItem.unlocked {\n      color: white;\n      background-color: transparent;\n      border: 5px solid black;\n      cursor: pointer; }\n      .indexList .indexItem.unlocked:hover {\n        background-color: white;\n        color: black;\n        -webkit-transition-duration: 0.3s;\n        transition-duration: 0.3s; }\n        .indexList .indexItem.unlocked:hover .overlay {\n          width: 200px;\n          height: 200px;\n          opacity: 0;\n          border: 0px solid black;\n          -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s; }\n    .indexList .indexItem.locked {\n      color: white;\n      background-color: gray;\n      border: 5px solid gray;\n      opacity: 0.5; }\n      .indexList .indexItem.locked .overlay {\n        display: none; }\n      .indexList .indexItem.locked:hover {\n        opacity: 0.7;\n        -webkit-transition-duration: 0.3s;\n        transition-duration: 0.3s; }\n      .indexList .indexItem.locked .labelText::after {\n        margin-left: 5px;\n        font-family: FontAwesome;\n        content: '\\F023'; }\n\n.mdZone {\n  letter-spacing: normal; }\n  .mdZone h1 {\n    border-radius: 5px;\n    background-color: lightgray;\n    padding: 10px 15px; }\n  .mdZone h2 {\n    margin-top: 30px; }\n    .mdZone h2::before {\n      margin-right: 5px;\n      font-family: FontAwesome;\n      content: \"\\F101\"; }\n  .mdZone img {\n    display: block;\n    margin: 0 auto;\n    max-width: 100%;\n    padding: 10px 0; }\n  .mdZone table {\n    border: 1px solid gray;\n    border-collapse: collapse; }\n    .mdZone table th {\n      border: 1px solid gray; }\n    .mdZone table td {\n      padding: 5px;\n      border: 1px solid gray; }\n\n.questionsWrapper ul {\n  padding-left: 20px; }\n\n.questionsWrapper li {\n  margin-top: 10px;\n  list-style: none; }\n  .questionsWrapper li label {\n    cursor: pointer; }\n\n.questionsWrapper .colorChoiceItems {\n  width: 60px;\n  height: 60px;\n  float: left;\n  border-radius: 50%;\n  padding: 5px;\n  margin-left: 10px;\n  border: 3px solid transparent;\n  background-clip: content-box;\n  -webkit-transition-duration: 0.2s;\n  transition-duration: 0.2s; }\n  .questionsWrapper .colorChoiceItems.selected {\n    border: 3px solid black;\n    -webkit-transition-duration: 0.2s;\n    transition-duration: 0.2s; }\n\n.questionsWrapper input {\n  margin-right: 10px; }\n\n.questionsWrapper .sectionItem {\n  border-top: 1px solid lightgray; }\n  .questionsWrapper .sectionItem h2::before {\n    margin-right: 5px;\n    font-family: FontAwesome;\n    content: \"\\F101\"; }\n\n.questionsWrapper .questionItem {\n  padding-left: 50px;\n  padding-top: 10px;\n  display: table; }\n\n.questionsWrapper.marked .secCorrectCnt {\n  margin-left: 30px; }\n\n.questionsWrapper.marked .question.correct::after {\n  color: green;\n  margin-left: 10px;\n  font-family: FontAwesome;\n  content: '\\F10C'; }\n\n.questionsWrapper.marked .question.wrong::after {\n  color: red;\n  margin-left: 10px;\n  font-family: FontAwesome;\n  content: '\\F00D'; }\n\n.questionsWrapper.marked .radioItem.correct {\n  font-weight: bold;\n  color: green; }\n  .questionsWrapper.marked .radioItem.correct .colorChoiceItems {\n    border-color: green; }\n\n.questionsWrapper.marked .radioItem.wrong {\n  text-decoration: line-through; }\n  .questionsWrapper.marked .radioItem.wrong .colorChoiceItems {\n    border-color: lightgray; }\n\n.questionsWrapper.marked .radioItem.correctAns {\n  font-weight: bold;\n  color: red; }\n  .questionsWrapper.marked .radioItem.correctAns .colorChoiceItems {\n    border-color: red; }\n\n.questionsWrapper.marked .scoreText {\n  padding: 20px;\n  text-align: center;\n  background-color: lightgray; }\n\n.choice-box .color-choice {\n  display: inline-block;\n  vertical-align: middle;\n  width: 100px;\n  height: 100px;\n  margin: 5px;\n  border: none;\n  border-radius: 100px; }\n\n.postTest-choiceBox .radioItem {\n  display: inline-block; }\n  .postTest-choiceBox .radioItem .colorChoiceItems {\n    width: 100px;\n    height: 100px; }\n\n.checkBtn {\n  margin-top: 20px; }\n\n.LOMtable {\n  width: 100%;\n  border: 1px solid black;\n  border-collapse: collapse; }\n  .LOMtable th {\n    width: 20%;\n    border: 1px solid black; }\n  .LOMtable td {\n    text-align: left;\n    padding: 10px;\n    border: 1px solid black; }\n", ""]);
+exports.push([module.i, ".headerWrapper ul {\n  z-index: 10;\n  position: fixed;\n  width: 100%;\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  top: 0;\n  overflow: hidden;\n  background-color: #333; }\n\n.headerWrapper li {\n  cursor: pointer;\n  float: left; }\n  .headerWrapper li p {\n    display: block;\n    color: white;\n    text-align: center;\n    padding: 14px 16px;\n    text-decoration: none; }\n  .headerWrapper li.center {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%); }\n  .headerWrapper li.right {\n    float: right; }\n\nbody {\n  font-family: 'Droid Sans Mono', monospace;\n  letter-spacing: 5px;\n  margin: 0; }\n\n.mainWrapper {\n  position: relative;\n  margin-top: 100px;\n  width: 60%;\n  left: 50%;\n  transform: translateX(-50%); }\n  .mainWrapper.center {\n    position: fixed;\n    margin-top: 0;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    text-align: center; }\n\n.fullWidthWrapper {\n  position: relative;\n  margin-top: 100px;\n  width: 100%;\n  left: 50%;\n  transform: translateX(-50%); }\n  .fullWidthWrapper.center {\n    position: fixed;\n    margin-top: 0;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    text-align: center; }\n\n.mainBtn {\n  border-style: solid;\n  border-color: #333;\n  background-color: #333;\n  color: white;\n  border-radius: 0;\n  border-width: 5px;\n  padding: 20px;\n  font-family: inherit;\n  font-size: 1.2em;\n  -webkit-transition-duration: 0.4s;\n  transition-duration: 0.4s; }\n  .mainBtn.large {\n    border-width: 5px;\n    padding: 20px; }\n  .mainBtn.medium {\n    border-width: 3px;\n    padding: 10px; }\n  .mainBtn.wide {\n    padding: 20px 50px; }\n  .mainBtn.center {\n    position: relative;\n    left: 50%;\n    transform: translateX(-50%); }\n  .mainBtn:hover {\n    background-color: white;\n    color: #333; }\n\n.nextBtn {\n  cursor: pointer;\n  float: right; }\n  .nextBtn::after {\n    margin-left: 10px;\n    font-family: FontAwesome;\n    content: '\\F105'; }\n\n.prevBtn {\n  cursor: pointer;\n  float: left;\n  margin-top: 30px; }\n  .prevBtn::before {\n    margin-right: 10px;\n    font-family: FontAwesome;\n    content: '\\F104'; }\n\n.fullScreenWapper {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s; }\n\n.title {\n  font-size: 7em;\n  margin: 0;\n  user-select: none;\n  letter-spacing: 10px;\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s; }\n  .title::selection {\n    background-color: white; }\n\n.rgbValues {\n  user-select: none;\n  padding: 10px;\n  width: 50%;\n  margin: 0 auto;\n  border-radius: 20px;\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s; }\n  .rgbValues:hover {\n    background-color: white;\n    color: black !important;\n    -webkit-transition-duration: 0.3s;\n    transition-duration: 0.3s; }\n  .rgbValues span.red {\n    color: red; }\n  .rgbValues span.green {\n    color: green; }\n  .rgbValues span.blue {\n    color: blue; }\n\n.titleBtn {\n  user-select: none;\n  margin-top: 30px; }\n\n.indexList {\n  display: inline-block;\n  margin-top: 20px; }\n  .indexList .indexItem {\n    float: left;\n    width: 200px;\n    height: 200px;\n    margin: 5px;\n    text-align: center;\n    line-height: 200px;\n    border-radius: 50%;\n    -webkit-transition-duration: 0.3s;\n    transition-duration: 0.3s; }\n    .indexList .indexItem .overlay {\n      position: absolute;\n      width: 0;\n      height: 0;\n      z-index: -1;\n      border-radius: 50%;\n      border: 100px solid black;\n      -webkit-transition-duration: 0.3s;\n      transition-duration: 0.3s; }\n    .indexList .indexItem.unlocked {\n      color: white;\n      background-color: transparent;\n      border: 5px solid black;\n      cursor: pointer; }\n      .indexList .indexItem.unlocked:hover {\n        background-color: white;\n        color: black;\n        -webkit-transition-duration: 0.3s;\n        transition-duration: 0.3s; }\n        .indexList .indexItem.unlocked:hover .overlay {\n          width: 200px;\n          height: 200px;\n          opacity: 0;\n          border: 0px solid black;\n          -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s; }\n    .indexList .indexItem.locked {\n      color: white;\n      background-color: gray;\n      border: 5px solid gray;\n      opacity: 0.5; }\n      .indexList .indexItem.locked .overlay {\n        display: none; }\n      .indexList .indexItem.locked:hover {\n        opacity: 0.7;\n        -webkit-transition-duration: 0.3s;\n        transition-duration: 0.3s; }\n      .indexList .indexItem.locked .labelText::after {\n        margin-left: 5px;\n        font-family: FontAwesome;\n        content: '\\F023'; }\n\n.mainBtn.minigame {\n  display: flex;\n  margin-top: 20px; }\n\n.mdZone {\n  letter-spacing: normal; }\n  .mdZone h1 {\n    border-radius: 5px;\n    background-color: lightgray;\n    padding: 10px 15px; }\n  .mdZone h2 {\n    margin-top: 30px; }\n    .mdZone h2::before {\n      margin-right: 5px;\n      font-family: FontAwesome;\n      content: \"\\F101\"; }\n  .mdZone img {\n    display: block;\n    margin: 0 auto;\n    max-width: 100%;\n    padding: 10px 0; }\n  .mdZone table {\n    border: 1px solid gray;\n    border-collapse: collapse; }\n    .mdZone table th {\n      border: 1px solid gray; }\n    .mdZone table td {\n      padding: 5px;\n      border: 1px solid gray; }\n\n.questionsWrapper ul {\n  padding-left: 20px; }\n\n.questionsWrapper li {\n  margin-top: 10px;\n  list-style: none; }\n  .questionsWrapper li label {\n    cursor: pointer; }\n\n.questionsWrapper .colorChoiceItems {\n  width: 60px;\n  height: 60px;\n  float: left;\n  border-radius: 50%;\n  padding: 5px;\n  margin-left: 10px;\n  border: 3px solid transparent;\n  background-clip: content-box;\n  -webkit-transition-duration: 0.2s;\n  transition-duration: 0.2s; }\n  .questionsWrapper .colorChoiceItems.selected {\n    border: 3px solid black;\n    -webkit-transition-duration: 0.2s;\n    transition-duration: 0.2s; }\n\n.questionsWrapper input {\n  margin-right: 10px; }\n\n.questionsWrapper .sectionItem {\n  border-top: 1px solid lightgray; }\n  .questionsWrapper .sectionItem h2::before {\n    margin-right: 5px;\n    font-family: FontAwesome;\n    content: \"\\F101\"; }\n\n.questionsWrapper .questionItem {\n  padding-left: 50px;\n  padding-top: 10px;\n  display: table; }\n\n.questionsWrapper.marked .secCorrectCnt {\n  margin-left: 30px; }\n\n.questionsWrapper.marked .question.correct::after {\n  color: green;\n  margin-left: 10px;\n  font-family: FontAwesome;\n  content: '\\F10C'; }\n\n.questionsWrapper.marked .question.wrong::after {\n  color: red;\n  margin-left: 10px;\n  font-family: FontAwesome;\n  content: '\\F00D'; }\n\n.questionsWrapper.marked .radioItem.correct {\n  font-weight: bold;\n  color: green; }\n  .questionsWrapper.marked .radioItem.correct .colorChoiceItems {\n    border-color: green; }\n\n.questionsWrapper.marked .radioItem.wrong {\n  text-decoration: line-through; }\n  .questionsWrapper.marked .radioItem.wrong .colorChoiceItems {\n    border-color: lightgray; }\n\n.questionsWrapper.marked .radioItem.correctAns {\n  font-weight: bold;\n  color: red; }\n  .questionsWrapper.marked .radioItem.correctAns .colorChoiceItems {\n    border-color: red; }\n\n.questionsWrapper.marked .scoreText {\n  padding: 20px;\n  text-align: center;\n  background-color: lightgray; }\n\n.choice-box .color-choice {\n  display: inline-block;\n  vertical-align: middle;\n  width: 100px;\n  height: 100px;\n  margin: 5px;\n  border: none;\n  border-radius: 100px; }\n\n.postTest-choiceBox .radioItem {\n  display: inline-block; }\n  .postTest-choiceBox .radioItem .colorChoiceItems {\n    width: 100px;\n    height: 100px; }\n\n.checkBtn {\n  margin-top: 20px; }\n\n.LOMtable {\n  width: 100%;\n  border: 1px solid black;\n  border-collapse: collapse; }\n  .LOMtable th {\n    width: 20%;\n    border: 1px solid black; }\n  .LOMtable td {\n    text-align: left;\n    padding: 10px;\n    border: 1px solid black; }\n", ""]);
 
 // exports
 
@@ -19629,6 +19647,143 @@ var PostTest = function (_React$Component) {
                             } },
                         '\u30A2\u30F3\u30B1\u30FC\u30C8'
                     )
+                )
+            );
+        }
+    }]);
+
+    return PostTest;
+}(_react2.default.Component);
+
+exports.default = PostTest;
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _functions = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PostTest = function (_React$Component) {
+    _inherits(PostTest, _React$Component);
+
+    function PostTest() {
+        _classCallCheck(this, PostTest);
+
+        var answer = (0, _functions.generateColor)();
+
+        var _this = _possibleConstructorReturn(this, (PostTest.__proto__ || Object.getPrototypeOf(PostTest)).call(this));
+
+        _this.state = {
+            combo: 0,
+            message: 'カラーコードが表す色を当ててね！',
+            answer: answer,
+            choices: _this.generateChoices(answer)
+        };
+        return _this;
+    }
+
+    _createClass(PostTest, [{
+        key: 'newColorSet',
+        value: function newColorSet() {
+            var answer = (0, _functions.generateColor)();
+            this.setState({
+                answer: answer,
+                choices: this.generateChoices(answer)
+            });
+        }
+    }, {
+        key: 'generateChoices',
+        value: function generateChoices(answer) {
+            var choices = [answer];
+            for (var i = 0; i < 2; i++) {
+                choices.push((0, _functions.generateColor)());
+            }
+            return (0, _functions.shuffle)(choices);
+        }
+    }, {
+        key: 'checkAnswer',
+        value: function checkAnswer(selection) {
+            if (selection == this.state.answer.hex) {
+                this.newColorSet();
+                this.setState({
+                    combo: this.state.combo + 1,
+                    message: 'すっごーーーい！！'
+                });
+            } else {
+                this.setState({
+                    combo: 0,
+                    message: '\u3061\u304C\u3046\u3088\uFF01 \u305D\u308C\u306F #' + selection + ' \uFF01'
+                });
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'mainWrapper center' },
+                _react2.default.createElement(
+                    'h1',
+                    null,
+                    '#',
+                    this.state.answer.hex
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    this.state.message
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'choice-box' },
+                    this.state.choices.map(function (color, idx) {
+                        return _react2.default.createElement('div', {
+                            key: 'color-' + idx,
+                            className: 'color-choice',
+                            style: { backgroundColor: '#' + color.hex },
+                            onClick: function onClick() {
+                                return _this2.checkAnswer(color.hex);
+                            }
+                        });
+                    })
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'combo: ',
+                    this.state.combo
+                ),
+                _react2.default.createElement(
+                    'button',
+                    {
+                        className: 'mainBtn prevBtn',
+                        onClick: function onClick() {
+                            return _this2.props.handleJump('index');
+                        } },
+                    'done'
                 )
             );
         }

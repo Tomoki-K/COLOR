@@ -7,6 +7,7 @@ import Text from "./text.jsx";
 import Quiz from "./quiz.jsx";
 import PreTest from "./pre-test.jsx";
 import PostTest from "./post-test.jsx";
+import MiniGame from "./mini-game.jsx";
 require('../css/index.scss');
 
 class App extends React.Component {
@@ -123,6 +124,11 @@ class App extends React.Component {
                                 );
                             })}
                         </div>
+                        <button
+                            className='mainBtn center minigame'
+                            onClick={() => this.jumpto('mini-game')}>
+                            mini-game
+                        </button>
                     </div>
                 </If>
                 {/* ===== TEXT PAGE ===== */}
@@ -139,6 +145,10 @@ class App extends React.Component {
                 {/* ===== POST-TEST PAGE ===== */}
                 <If condition={this.state.page == 'post-test'}>
                     <PostTest jumpToSurvey={this.jumpToSurvey}/>
+                </If>
+                {/* ===== MINI-GAME PAGE ===== */}
+                <If condition={this.state.page == 'mini-game'}>
+                    <MiniGame handleJump={this.jumpto}/>
                 </If>
                 {/* ===== ABOUT PAGE ===== */}
                 <If condition={this.state.page == 'about'}>
