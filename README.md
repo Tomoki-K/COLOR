@@ -1,6 +1,6 @@
 # e-learning 教材
 
-https://tomoki-k.github.io/e-learning/
+https://tomoki-k.github.io/COLOR/
 
 ## About
 16進数カラーコードについて理解するための教材．
