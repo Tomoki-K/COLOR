@@ -39,7 +39,7 @@ export default class About extends React.Component {
                     </tr>
                     <tr>
                         <th>使用料</th>
-                        <td>無料(有料コンテンツあり)</td>
+                        <td>120円/ライセンス</td>
                     </tr>
                     <tr>
                         <th>企画・制作</th>
@@ -56,10 +56,10 @@ export default class About extends React.Component {
                         <th>制作者</th>
                         <td>
                           <ul>
-                            <li>1G151012 早戸洋介</li>
-                            <li>1G151026 狩野智輝</li>
-                            <li>1G151027 岸田慎之介</li>
-                            <li>1G151042 森本陽貴</li>
+                            <li>1G151012 早戸洋介 [マネージャー]</li>
+                            <li>1G151026 狩野智輝 [開発者]</li>
+                            <li>1G151027 岸田慎之介 [専門家]</li>
+                            <li>1G151042 森本陽貴 [設計者]</li>
                           </ul>
                         </td>
                     </tr>
