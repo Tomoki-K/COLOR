@@ -50,9 +50,19 @@ export default class About extends React.Component {
                     </tr>
                     <tr>
                         <th>募集方法</th>
-                        <td>同志社大学理工学部情報系学科/文化情報学部の1回生を対象とし，10名程度募集する．</td>
+                        <td>同志社大学理工学部情報系学科/文化情報学部の学生を対象とし，10名程度募集する．</td>
                     </tr>
-
+                    <tr>
+                        <th>制作者</th>
+                        <td>
+                          <ul>
+                            <li>1G151012 早戸洋介</li>
+                            <li>1G151026 狩野智輝</li>
+                            <li>1G151027 岸田慎之介</li>
+                            <li>1G151042 森本陽貴</li>
+                          </ul>
+                        </td>
+                    </tr>
                 </table>
             </div>
         );
